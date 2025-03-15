@@ -11,8 +11,8 @@ export default function Home() {
       <Header />
       <Features />
       <Community />
-      <Faq />
-      <Pricing />
+      {/* <Faq /> */}
+      {/* <Pricing /> */}
       <Footer />
     </>
   )

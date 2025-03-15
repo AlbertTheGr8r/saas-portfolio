@@ -1,0 +1,22 @@
+[
+  {
+    "title": "GNSS-enabled GCP",
+    "text": "Undergraduate thesis on adding GNSS capabilities to Ground Control Points for drone mapping.",
+    "image": "/assets/projects/gnss-gcp.jpg"
+  },
+  {
+    "title": "Pagsanjan River Mapping",
+    "text": "Mapping a secction of the Pagsanjan River.",
+    "image": "/assets/projects/pagsanjan-river.jpg"
+  },
+  {
+    "title": "Smokey Mountain Digital Twin",
+    "text": "3d model of Smokey Mountain from drone photogrammetry.",
+    "image": "/assets/projects/smokey-mountain.jpg"
+  },
+  {
+    "title": "SMART METRO Project",
+    "text": "Web dashboard for geospatial mapping and data analysis.",
+    "image": "/assets/projects/smart-metro.jpg"
+  }
+]

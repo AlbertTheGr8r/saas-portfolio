@@ -1,0 +1,40 @@
+{
+  "reviews": [
+    {
+      "pfp": "https://api.dicebear.com/7.x/avataaars/svg?seed=1",
+      "fullName": "John Doe",
+      "jobTitle": "Senior Developer",
+      "review": "Excellent collaboration experience!"
+    },
+    {
+      "pfp": "https://api.dicebear.com/7.x/avataaars/svg?seed=2",
+      "fullName": "Jane Smith",
+      "jobTitle": "Product Manager",
+      "review": "Professional and reliable partner."
+    },
+    {
+      "pfp": "https://api.dicebear.com/7.x/avataaars/svg?seed=3",
+      "fullName": "Bob Johnson",
+      "jobTitle": "UX Designer",
+      "review": "Great team player with excellent skills."
+    },
+    {
+      "pfp": "https://api.dicebear.com/7.x/avataaars/svg?seed=4",
+      "fullName": "Alice Brown",
+      "jobTitle": "DevOps Engineer",
+      "review": "Always delivers high-quality work."
+    },
+    {
+      "pfp": "https://api.dicebear.com/7.x/avataaars/svg?seed=5",
+      "fullName": "Mike Wilson",
+      "jobTitle": "Project Lead",
+      "review": "Outstanding technical expertise."
+    },
+    {
+      "pfp": "https://api.dicebear.com/7.x/avataaars/svg?seed=6",
+      "fullName": "Sarah Taylor",
+      "jobTitle": "QA Specialist",
+      "review": "Very professional and thorough."
+    }
+  ]
+}
