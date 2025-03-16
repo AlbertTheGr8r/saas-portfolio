@@ -53,5 +53,5 @@ jobs:
         uses: cssnr/cf-purge-cache-action@v1
         with:
           token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          domains: yourdomain.com
+          domains: www.antiparity.net
           purge_everything: true
