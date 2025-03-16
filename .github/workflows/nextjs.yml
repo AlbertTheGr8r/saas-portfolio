@@ -26,13 +26,10 @@ jobs:
         run: pnpm install
 
       - name: Build with Next.js
-        run: pnpm next build
-
-      - name: Export static site
-        run: pnpm next export
+        run: pnpm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./out
 
