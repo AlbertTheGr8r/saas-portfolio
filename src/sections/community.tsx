@@ -36,7 +36,7 @@ export default function Community() {
     <section className="border-b-border dark:border-b-darkBorder dark:bg-secondaryBlack inset-0 flex w-full flex-col items-center justify-center border-b-2 bg-white bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px] font-base">
       <div className="mx-auto w-container max-w-full px-5 py-20 lg:py-[100px]">
         <h2 className="mb-14 text-center text-2xl font-heading md:text-3xl lg:mb-20 lg:text-4xl">
-          See who I've worked with
+          See who I&apos;ve worked with
         </h2>
         <div className="grid grid-cols-3 gap-4 lg:gap-8 w900:grid-cols-1 w900:gap-0">
           {distributedReviews.map((card, index) => (
