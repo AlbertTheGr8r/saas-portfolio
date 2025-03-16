@@ -54,4 +54,6 @@ jobs:
         with:
           token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           domains: www.antiparity.net
-          purge_everything: true
+          zone: ${{ secrets.CLOUDFLARE_ZONE_ID }}  # Add your Cloudflare Zone ID secret
+          args: '{"purge_everything":true}'
+
