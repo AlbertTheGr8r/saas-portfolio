@@ -17,8 +17,8 @@ export function ThemeSwitcher() {
         className="fixed right-10 top-10 z-50"
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       >
-        <Sun className="stroke-text hidden h-6 w-6 w500:h-4 w500:w-4 dark:inline" />
-        <Moon className="stroke-text inline h-6 w-6 w500:h-4 w500:w-4 dark:hidden" />
+        <Sun className="stroke-text hidden h-8 w-8 w500:h-6 w500:w-6 dark:inline" strokeWidth={2.5} />
+        <Moon className="stroke-text inline h-8 w-8 w500:h-6 w500:w-6 dark:hidden" strokeWidth={2.5} />
         <span className="sr-only">Toggle theme</span>
       </Button>
     </>
