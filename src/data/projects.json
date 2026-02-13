@@ -5,6 +5,11 @@
     "image": "/assets/projects/gnss-gcp.jpg"
   },
   {
+    "title": "Land Cover Mapping",
+    "text": "Mapping an area of forest with drone photogrammetry for tree tagging.",
+    "image": "/assets/projects/land-cover-mapping.jpg"
+  },
+  {
     "title": "Pagsanjan River Mapping",
     "text": "Mapping a secction of the Pagsanjan River.",
     "image": "/assets/projects/pagsanjan-river.jpg"
