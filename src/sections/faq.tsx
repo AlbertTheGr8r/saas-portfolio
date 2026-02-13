@@ -9,7 +9,7 @@ import Marquee from 'react-fast-marquee'
 export default function Faq() {
   return (
     <div>
-      <section className=" dark:bg-darkBg bg-bg py-20 font-base lg:py-[100px]">
+      <section className="bg-background py-20 font-base lg:py-[100px]">
         <h2 className="mb-14 px-5 text-center text-2xl font-heading md:text-3xl lg:mb-20 lg:text-4xl">
           Frequently asked questions
         </h2>
@@ -53,7 +53,7 @@ export default function Faq() {
       </section>
       <div>
         <Marquee
-          className="border-y-border dark:border-y-darkBorder dark:border-darkBorder dark:bg-secondaryBlack border-y-2 bg-white py-3 font-base sm:py-5"
+          className="border-y-border border-y-2 bg-secondary-background py-3 font-base sm:py-5"
           direction="right"
         >
           {Array(10)
