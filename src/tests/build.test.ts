@@ -133,6 +133,29 @@ describe('Build Output Tests', () => {
     it('should have 404 page', () => {
       expect(existsSync('out/404.html')).toBe(true)
     })
+
+    it('should have blog index page at /blog/index.html', () => {
+      expect(existsSync('out/blog/index.html')).toBe(true)
+    })
+
+    it('should have projects index page at /projects/index.html', () => {
+      expect(existsSync('out/projects/index.html')).toBe(true)
+    })
+
+    it('should have contact page at /contact/index.html', () => {
+      expect(existsSync('out/contact/index.html')).toBe(true)
+    })
+
+    it('should have proper directory structure for trailing slash URLs', () => {
+      // These paths should work with trailingSlash: true config
+      expect(existsSync('out/blog/index.html')).toBe(true)
+      expect(existsSync('out/projects/index.html')).toBe(true)
+      expect(existsSync('out/contact/index.html')).toBe(true)
+      
+      // Individual post pages should also be in directories
+      const blogPosts = glob.sync('out/blog/*/index.html')
+      expect(blogPosts.length).toBeGreaterThan(0)
+    })
   })
 
   describe('Content Consistency', () => {
