@@ -8,7 +8,11 @@
     "build": "next build",
     "postbuild": "node scripts/generate-static-assets.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:content": "vitest run src/tests/content.test.ts"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^12.2.0",
@@ -39,13 +43,21 @@
     "@types/node": "^20",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^8",
     "eslint-config-next": "15.2.0",
     "eslint-config-prettier": "^9.1.0",
+    "expect-match-schema": "^1.1.0",
+    "fast-xml-parser": "^5.3.5",
+    "glob": "^13.0.3",
+    "gray-matter": "^4.0.3",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.9",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.0.18",
+    "vitest-axe": "^0.1.0",
+    "zod": "^4.3.6"
   }
 }
