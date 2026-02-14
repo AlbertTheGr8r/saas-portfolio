@@ -47,20 +47,44 @@ pnpm test:run src/tests/build.test.ts
 
 **Location**: `src/tests/visual/`
 
-Captures and compares UI screenshots to detect unintended visual changes.
+Uses Playwright to capture and compare UI screenshots, detecting unintended visual changes.
 
 **What it tests**:
-- Navigation bar visibility and positioning
-- Theme toggle behavior
-- Sticky header scroll behavior
+- Navigation bar visibility and positioning on all pages
+- Theme toggle visibility and positioning
+- Sticky header scroll behavior (homepage vs other pages)
 - Page layout consistency
-- Responsive design breakpoints
+- Responsive design breakpoints (desktop & mobile)
+- Text contrast and readability
 - Component rendering across pages
+
+**Known Issues Being Tested**:
+- Navbar transparency showing background (contrast issues)
+- Theme toggle partial visibility when not scrolling
+- Theme toggle clipping onto navbar when visible
+- Navbar not appearing on non-homepage routes
+- Scroll behavior (should only hide on hero, always visible elsewhere)
 
 **Run**:
 ```bash
+# Run all visual tests
 pnpm test:visual
+
+# Update baseline screenshots
+pnpm test:visual:update
+
+# View test report
+pnpm test:visual:report
 ```
+
+**First Time Setup**:
+Baseline screenshots are generated on first run. Commit these to establish the reference state.
+
+**Configuration**:
+- Desktop: 1280x720 viewport
+- Mobile: iPhone 13 viewport
+- Threshold: 0.2 (20% pixel difference allowed)
+- Max diff pixels: 100
 
 ## Running Tests
 

@@ -44,3 +44,13 @@ next-env.d.ts
 /public/atom.xml
 /public/content-index.json
 .reports/
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# visual regression test snapshots (generated on first run)
+**/snapshots/*.png
+**/snapshots/*.jpg
+**/snapshots/*.jpeg
