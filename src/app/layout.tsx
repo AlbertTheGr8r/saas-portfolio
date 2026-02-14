@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import './globals.css'
-import { StickyNav } from '@/components/sticky-nav'
+import { Navbar } from '@/components/navbar'
 import { ThemeProvider } from '@/components/theme-provider'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
@@ -26,8 +26,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={dmSans.className}>
         <ThemeProvider attribute="class" disableTransitionOnChange>
-          <StickyNav />
-          {children}
+          <Navbar />
+          <main className="pt-0">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>

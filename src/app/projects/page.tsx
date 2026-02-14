@@ -3,29 +3,32 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { allProjects, type Project } from 'contentlayer/generated'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Github, Calendar } from 'lucide-react'
 
 function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between">
-          <time dateTime={project.date} className="text-sm text-muted-foreground">
-            {format(parseISO(project.date), 'MMMM yyyy')}
-          </time>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Calendar className="h-4 w-4" />
+            <time dateTime={project.date}>
+              {format(parseISO(project.date), 'MMM yyyy')}
+            </time>
+          </div>
           <Badge variant={project.status === 'completed' ? 'default' : 'neutral'}>
             {project.status}
           </Badge>
         </div>
         
-        <h2 className="mt-3 text-2xl font-heading">
+        <h2 className="mt-3 text-xl font-heading">
           <Link href={project.url} className="hover:text-main transition-colors">
             {project.title}
           </Link>
         </h2>
         
         {project.excerpt && (
-          <p className="mt-3 line-clamp-3 text-muted-foreground">
+          <p className="mt-3 line-clamp-3 text-muted-foreground text-sm">
             {project.excerpt}
           </p>
         )}
@@ -65,15 +68,15 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsPage() {
   const projects = allProjects
-    .filter((project) => !project.draft)
+    .filter((project) => !project.draft && !project.archived)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   return (
-    <div className="min-h-screen bg-bg dark:bg-darkBg">
-      <div className="mx-auto w-container max-w-full px-5 py-20">
+    <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+      <div className="mx-auto w-container max-w-full px-5 py-12 md:py-20">
         <header className="mb-12">
-          <h1 className="text-5xl font-heading">Projects</h1>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h1 className="text-4xl md:text-5xl font-heading">Projects</h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
             A collection of things I&apos;ve built.
           </p>
         </header>

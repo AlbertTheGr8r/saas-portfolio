@@ -29,8 +29,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <article className="min-h-screen bg-bg dark:bg-darkBg">
-      <div className="mx-auto w-container max-w-full px-5 py-20">
+    <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+      <div className="mx-auto w-container max-w-full px-5 py-12 md:py-20">
         <header className="mb-12">
           <div className="flex items-center gap-3">
             <Badge variant={project.status === 'completed' ? 'default' : 'neutral'}>

@@ -2,31 +2,27 @@ import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, type Post } from 'contentlayer/generated'
 import { Badge } from '@/components/ui/badge'
+import { Calendar } from 'lucide-react'
 
 function PostCard({ post }: { post: Post }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Calendar className="h-4 w-4" />
           <time dateTime={post.date}>
-            {format(parseISO(post.date), 'MMMM d, yyyy')}
+            {format(parseISO(post.date), 'MMM d, yyyy')}
           </time>
-          {post.updated && (
-            <>
-              <span>·</span>
-              <span>Updated {format(parseISO(post.updated), 'MMMM d, yyyy')}</span>
-            </>
-          )}
         </div>
         
-        <h2 className="mt-3 text-2xl font-heading">
+        <h2 className="mt-3 text-xl font-heading">
           <Link href={post.url} className="hover:text-main transition-colors">
             {post.title}
           </Link>
         </h2>
         
         {post.excerpt && (
-          <p className="mt-3 line-clamp-3 text-muted-foreground">
+          <p className="mt-3 line-clamp-3 text-muted-foreground text-sm">
             {post.excerpt}
           </p>
         )}
@@ -47,7 +43,7 @@ function PostCard({ post }: { post: Post }) {
 
 export default function BlogPage() {
   const posts = allPosts
-    .filter((post) => !post.draft)
+    .filter((post) => !post.draft && !post.archived)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   const featuredPosts = posts.filter((post) => post.featured)
@@ -61,18 +57,21 @@ export default function BlogPage() {
   const remainingPosts = regularPosts.slice(remainingSlots)
 
   return (
-    <div className="min-h-screen bg-bg dark:bg-darkBg">
-      <div className="mx-auto w-container max-w-full px-5 py-20">
+    <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+      <div className="mx-auto w-container max-w-full px-5 py-12 md:py-20">
         <header className="mb-12">
-          <h1 className="text-5xl font-heading">Blog</h1>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h1 className="text-4xl md:text-5xl font-heading">Blog</h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
             Thoughts, learnings, and explorations in code.
           </p>
         </header>
 
         {allFeatured.length > 0 && (
           <section className="mb-16">
-            <h2 className="mb-6 text-2xl font-heading">Featured</h2>
+            <h2 className="mb-6 text-xl font-heading flex items-center gap-2">
+              <span className="inline-block w-3 h-3 bg-main rounded-full"></span>
+              Featured
+            </h2>
             <div className="grid gap-6 md:grid-cols-2">
               {allFeatured.map((post) => (
                 <PostCard key={post._id} post={post} />
@@ -83,7 +82,7 @@ export default function BlogPage() {
 
         {remainingPosts.length > 0 && (
           <section>
-            <h2 className="mb-6 text-2xl font-heading">All Posts</h2>
+            <h2 className="mb-6 text-xl font-heading">All Posts</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {remainingPosts.map((post) => (
                 <PostCard key={post._id} post={post} />
