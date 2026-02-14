@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# contentlayer
+.contentlayer
+
+# generated feeds
+/public/feed.xml
+/public/feed.json
+/public/atom.xml
+/public/content-index.json
+.reports/

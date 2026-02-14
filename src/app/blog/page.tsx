@@ -1,0 +1,103 @@
+import Link from 'next/link'
+import { compareDesc, format, parseISO } from 'date-fns'
+import { allPosts, type Post } from 'contentlayer/generated'
+import { Badge } from '@/components/ui/badge'
+
+function PostCard({ post }: { post: Post }) {
+  return (
+    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <time dateTime={post.date}>
+            {format(parseISO(post.date), 'MMMM d, yyyy')}
+          </time>
+          {post.updated && (
+            <>
+              <span>·</span>
+              <span>Updated {format(parseISO(post.updated), 'MMMM d, yyyy')}</span>
+            </>
+          )}
+        </div>
+        
+        <h2 className="mt-3 text-2xl font-heading">
+          <Link href={post.url} className="hover:text-main transition-colors">
+            {post.title}
+          </Link>
+        </h2>
+        
+        {post.excerpt && (
+          <p className="mt-3 line-clamp-3 text-muted-foreground">
+            {post.excerpt}
+          </p>
+        )}
+        
+        {post.tags.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {post.tags.map((tag) => (
+              <Badge key={tag} variant="neutral" className="text-xs">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
+  )
+}
+
+export default function BlogPage() {
+  const posts = allPosts
+    .filter((post) => !post.draft)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+
+  const featuredPosts = posts.filter((post) => post.featured)
+  const regularPosts = posts.filter((post) => !post.featured)
+
+  // Ensure exactly 2 featured posts
+  const displayFeatured = featuredPosts.slice(0, 2)
+  const remainingSlots = 2 - displayFeatured.length
+  const fillerPosts = regularPosts.slice(0, remainingSlots)
+  const allFeatured = [...displayFeatured, ...fillerPosts]
+  const remainingPosts = regularPosts.slice(remainingSlots)
+
+  return (
+    <div className="min-h-screen bg-bg dark:bg-darkBg">
+      <div className="mx-auto w-container max-w-full px-5 py-20">
+        <header className="mb-12">
+          <h1 className="text-5xl font-heading">Blog</h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Thoughts, learnings, and explorations in code.
+          </p>
+        </header>
+
+        {allFeatured.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-6 text-2xl font-heading">Featured</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {allFeatured.map((post) => (
+                <PostCard key={post._id} post={post} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {remainingPosts.length > 0 && (
+          <section>
+            <h2 className="mb-6 text-2xl font-heading">All Posts</h2>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {remainingPosts.map((post) => (
+                <PostCard key={post._id} post={post} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {posts.length === 0 && (
+          <div className="rounded-base border-2 border-border bg-secondary-background p-12 text-center dark:border-darkBorder">
+            <p className="text-muted-foreground">No posts yet. Check back soon!</p>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
