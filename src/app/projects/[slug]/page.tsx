@@ -1,9 +1,8 @@
 import { notFound } from 'next/navigation'
 import { format, parseISO } from 'date-fns'
-import { allProjects } from 'contentlayer/generated'
+import { projects } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { MDXContent } from './mdx-content'
 import { ExternalLink, Github } from 'lucide-react'
 
 interface ProjectPageProps {
@@ -13,16 +12,14 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
-  return allProjects.map((project) => ({
-    slug: project._raw.flattenedPath.replace('projects/', ''),
+  return projects.map((project) => ({
+    slug: project.slug,
   }))
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params
-  const project = allProjects.find(
-    (project) => project._raw.flattenedPath.replace('projects/', '') === slug
-  )
+  const project = projects.find((project) => project.slug === slug)
 
   if (!project || project.draft) {
     notFound()
@@ -80,7 +77,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8">
             <div className="prose prose-lg max-w-none">
-              <MDXContent code={project.body.code} />
+              {/* TODO: Add content rendering when markdown issue is resolved */}
+              <p className="text-muted-foreground">Content rendering temporarily unavailable during migration.</p>
             </div>
           </div>
 

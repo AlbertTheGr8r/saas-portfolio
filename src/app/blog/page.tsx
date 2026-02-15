@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
-import { allPosts, type Post } from 'contentlayer/generated'
+import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Calendar } from 'lucide-react'
 
-function PostCard({ post }: { post: Post }) {
+function PostCard({ post }: { post: typeof posts[0] }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       <div className="flex flex-1 flex-col p-6">
@@ -42,12 +42,12 @@ function PostCard({ post }: { post: Post }) {
 }
 
 export default function BlogPage() {
-  const posts = allPosts
+  const allPosts = posts
     .filter((post) => !post.draft && !post.archived)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
-  const featuredPosts = posts.filter((post) => post.featured)
-  const regularPosts = posts.filter((post) => !post.featured)
+  const featuredPosts = allPosts.filter((post) => post.featured)
+  const regularPosts = allPosts.filter((post) => !post.featured)
 
   // Ensure exactly 2 featured posts
   const displayFeatured = featuredPosts.slice(0, 2)
@@ -74,7 +74,7 @@ export default function BlogPage() {
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
               {allFeatured.map((post) => (
-                <PostCard key={post._id} post={post} />
+                <PostCard key={post.slug} post={post} />
               ))}
             </div>
           </section>
@@ -85,13 +85,13 @@ export default function BlogPage() {
             <h2 className="mb-6 text-xl font-heading">All Posts</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {remainingPosts.map((post) => (
-                <PostCard key={post._id} post={post} />
+                <PostCard key={post.slug} post={post} />
               ))}
             </div>
           </section>
         )}
 
-        {posts.length === 0 && (
+        {allPosts.length === 0 && (
           <div className="rounded-base border-2 border-border bg-secondary-background p-12 text-center dark:border-darkBorder">
             <p className="text-muted-foreground">No posts yet. Check back soon!</p>
           </div>

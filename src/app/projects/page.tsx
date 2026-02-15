@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
-import { allProjects, type Project } from 'contentlayer/generated'
+import { projects } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github, Calendar } from 'lucide-react'
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       <div className="flex flex-1 flex-col p-6">
@@ -67,7 +67,7 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function ProjectsPage() {
-  const projects = allProjects
+  const allProjects = projects
     .filter((project) => !project.draft && !project.archived)
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
@@ -81,10 +81,10 @@ export default function ProjectsPage() {
           </p>
         </header>
 
-        {projects.length > 0 ? (
+        {allProjects.length > 0 ? (
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
-              <ProjectCard key={project._id} project={project} />
+            {allProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
         ) : (

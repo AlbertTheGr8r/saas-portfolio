@@ -5,11 +5,11 @@ import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const contentlayerDir = join(__dirname, '..', '.contentlayer', 'generated')
+const veliteDir = join(__dirname, '..', '.velite')
 
-// Read contentlayer data
-const allPosts = JSON.parse(readFileSync(join(contentlayerDir, 'Post', '_index.json'), 'utf-8'))
-const allProjects = JSON.parse(readFileSync(join(contentlayerDir, 'Project', '_index.json'), 'utf-8'))
+// Read velite data
+const allPosts = JSON.parse(readFileSync(join(veliteDir, 'posts.json'), 'utf-8'))
+const allProjects = JSON.parse(readFileSync(join(veliteDir, 'projects.json'), 'utf-8'))
 
 const siteUrl = 'https://antiparity.net'
 const date = new Date()
@@ -43,7 +43,7 @@ posts.forEach((post) => {
     id: `${siteUrl}${post.url}`,
     link: `${siteUrl}${post.url}`,
     description: post.excerpt,
-    content: post.body.raw,
+    // Note: content not available in Velite without markdown processing
     author: [{ name: 'Albert' }],
     date: new Date(post.date),
   })
@@ -58,7 +58,7 @@ console.log('RSS feeds generated!')
 const indexPosts = allPosts
   .filter((post) => !post.draft)
   .map((post) => ({
-    slug: post.slug || post._raw.sourceFileName.replace('.md', ''),
+    slug: post.slug,
     title: post.title,
     date: post.date,
     excerpt: post.excerpt,
@@ -70,7 +70,7 @@ const indexPosts = allPosts
 const indexProjects = allProjects
   .filter((project) => !project.draft)
   .map((project) => ({
-    slug: project.slug || project._raw.sourceFileName.replace('.md', ''),
+    slug: project.slug,
     title: project.title,
     date: project.date,
     excerpt: project.excerpt,

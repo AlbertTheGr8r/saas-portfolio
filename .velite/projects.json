@@ -1,0 +1,29 @@
+[
+  {
+    "title": "SaaS Portfolio Template",
+    "slug": "saas-portfolio",
+    "date": "2024-02-14T00:00:00.000Z",
+    "status": "completed",
+    "excerpt": "A modern portfolio template built with Next.js, Tailwind CSS, and neobrutalism design.",
+    "tags": [
+      "nextjs",
+      "tailwind",
+      "portfolio"
+    ],
+    "draft": false,
+    "archived": false,
+    "demoUrl": "https://antiparity.net",
+    "repoUrl": "https://github.com/AlbertTheGr8r/saas-portfolio",
+    "techStack": [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "shadcn/ui"
+    ],
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 98
+    },
+    "url": "/projects/saas-portfolio"
+  }
+]

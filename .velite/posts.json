@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Welcome to My Blog",
+    "slug": "welcome",
+    "date": "2024-02-14T00:00:00.000Z",
+    "excerpt": "This is my first blog post using Contentlayer and MDX. Learn about how I built this static site.",
+    "tags": [
+      "nextjs",
+      "contentlayer",
+      "mdx"
+    ],
+    "featured": true,
+    "draft": false,
+    "archived": false,
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 116
+    },
+    "url": "/blog/welcome"
+  }
+]

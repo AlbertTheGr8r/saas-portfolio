@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation'
 import { format, parseISO } from 'date-fns'
-import { allPosts } from 'contentlayer/generated'
+import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
-import { MDXContent } from './mdx-content'
 import { ShareButtons } from '@/components/share-buttons'
 
 interface BlogPostPageProps {
@@ -12,16 +11,14 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  return allPosts.map((post) => ({
-    slug: post._raw.flattenedPath.replace('blog/', ''),
+  return posts.map((post) => ({
+    slug: post.slug,
   }))
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
-  const post = allPosts.find(
-    (post) => post._raw.flattenedPath.replace('blog/', '') === slug
-  )
+  const post = posts.find((post) => post.slug === slug)
 
   if (!post || post.draft) {
     notFound()
@@ -59,7 +56,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8">
             <div className="prose prose-lg max-w-none">
-              <MDXContent code={post.body.code} />
+              {/* TODO: Add content rendering when markdown issue is resolved */}
+              <p className="text-muted-foreground">Content rendering temporarily unavailable during migration.</p>
             </div>
           </div>
 
