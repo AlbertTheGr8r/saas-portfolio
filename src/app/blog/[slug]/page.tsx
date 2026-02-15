@@ -29,19 +29,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
-      <div className="mx-auto w-container max-w-full px-5 py-12 md:py-20">
-        <header className="mb-12">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+      <div className="mx-auto max-w-6xl px-5 py-12 md:py-20">
+
+        {/* HERO */}
+        <header className="mx-auto max-w-3xl text-center mb-16">
+          <div className="text-sm text-muted-foreground">
             <time dateTime={post.date}>
               {format(parseISO(post.date), 'MMMM d, yyyy')}
             </time>
             {post.updated && (
-              <>
-                <span>·</span>
-                <span>
-                  Updated {format(parseISO(post.updated), 'MMMM d, yyyy')}
-                </span>
-              </>
+              <span> · Updated {format(parseISO(post.updated), 'MMMM d, yyyy')}</span>
             )}
           </div>
 
@@ -50,26 +47,48 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </h1>
 
           {post.excerpt && (
-            <p className="mt-4 text-lg text-muted-foreground">{post.excerpt}</p>
+            <p className="mt-6 text-lg text-muted-foreground">
+              {post.excerpt}
+            </p>
           )}
-
-          {post.tags.length > 0 && (
-            <div className="mt-6 flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <Badge key={tag} variant="neutral">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          )}
-
-          <div className="mt-6">
-            <ShareButtons url={post.url} title={post.title} />
-          </div>
         </header>
 
-        <div className="prose prose-lg max-w-none">
-          <MDXContent code={post.body.code} />
+        {/* CONTENT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+          {/* MAIN CONTENT */}
+          <div className="lg:col-span-8">
+            <div className="prose prose-lg max-w-none">
+              <MDXContent code={post.body.code} />
+            </div>
+          </div>
+
+          {/* SIDEBAR */}
+          <aside className="lg:col-span-4 space-y-8 lg:sticky lg:top-24 h-fit">
+            
+            {post.tags.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-3 text-muted-foreground">
+                  Tags
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <Badge key={tag} variant="neutral">
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div>
+              <h3 className="text-sm font-medium mb-3 text-muted-foreground">
+                Share
+              </h3>
+              <ShareButtons url={post.url} title={post.title} />
+            </div>
+
+          </aside>
         </div>
       </div>
     </article>

@@ -44,7 +44,6 @@ export function ShareButtons({ url, title }: ShareButtonsProps) {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-sm text-muted-foreground">Share:</span>
       <Button
         variant="noShadow"
         size="icon"

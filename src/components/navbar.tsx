@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { cn } from '@/lib/utils'
+import { Button } from './ui/button'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -39,8 +40,8 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-in-out',
-        'bg-main border-b-2 border-border shadow-shadow',
+        'fixed top-0 left-0 right-0 z-50 py-2 transition-transform duration-300 ease-in-out',
+        'bg-main border-b-4 border-border',
         'dark:bg-main dark:border-darkBorder dark:shadow-darkShadow',
         isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
@@ -57,19 +58,29 @@ export function Navbar() {
 
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'px-4 py-2 text-sm font-heading text-main-foreground rounded-base transition-all',
-                  'hover:bg-secondary-background hover:text-foreground',
-                  pathname === link.href && 'bg-secondary-background text-foreground'
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const normalizedPath = pathname.replace(/\/$/, '') || '/';
+              const normalizedLink = link.href.replace(/\/$/, '') || '/';
+              const isActive = normalizedLink === '/' 
+                ? normalizedPath === '/' 
+                : normalizedPath.startsWith(normalizedLink);
+
+              return (
+                <Button
+                  key={link.href}
+                  asChild
+                  variant="reverse"
+                  className={cn(
+                    'px-4 py-2 ml-2 text-sm font-heading rounded-base transition-all',
+                    isActive && 'translate-x-reverseBoxShadowX translate-y-reverseBoxShadowY shadow-shadow'
+                  )}
+                >
+                  <Link href={link.href}>
+                    {link.label}
+                  </Link>
+                </Button>
+              );
+            })}
           </div>
 
           {/* Theme Switcher */}

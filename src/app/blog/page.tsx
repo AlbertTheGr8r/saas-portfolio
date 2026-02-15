@@ -58,7 +58,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
-      <div className="mx-auto w-container max-w-full px-5 py-12 md:py-20">
+      <div className="mx-auto w-container max-w-6xl px-5 py-12 md:py-20">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-heading">Blog</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
