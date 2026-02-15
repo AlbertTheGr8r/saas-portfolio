@@ -3,6 +3,7 @@ import { format, parseISO } from 'date-fns'
 import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { ShareButtons } from '@/components/share-buttons'
+import { MDXContent } from '@/components/mdx-content'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -55,10 +56,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8">
-            <div className="prose prose-lg max-w-none">
-              {/* TODO: Add content rendering when markdown issue is resolved */}
-              <p className="text-muted-foreground">Content rendering temporarily unavailable during migration.</p>
-            </div>
+            <MDXContent source={post.content} />
           </div>
 
           {/* SIDEBAR */}

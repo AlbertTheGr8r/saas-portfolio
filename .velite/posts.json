@@ -12,6 +12,7 @@
     "featured": true,
     "draft": false,
     "archived": false,
+    "content": "# Welcome to My Blog\n\nThis is my first blog post using **Contentlayer** and **MDX** to build a fully static site. No backend required!\n\n## Why Static?\n\nStatic sites are:\n- Fast (pre-rendered HTML)\n- Secure (no server to hack)\n- Cheap to host (GitHub Pages is free)\n- Easy to version control (everything is in git)\n\n## Code Example\n\nHere's some TypeScript code:\n\n```typescript\nfunction greet(name: string): string {\n  return `Hello, ${name}!`\n}\n\nconsole.log(greet('World'))\n```\n\n## Lists\n\nHere's what I'm using:\n\n- Next.js 14 with App Router\n- Contentlayer for content management\n- MDX for rich content\n- Tailwind CSS for styling\n- Neobrutalism design system\n\n## Links\n\nCheck out my [projects](/projects) or go back [home](/).\n\n## Blockquote\n\n> \"The best code is no code at all.\"\n\nThanks for reading!",
     "metadata": {
       "readingTime": 1,
       "wordCount": 116

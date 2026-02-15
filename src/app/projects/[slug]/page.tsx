@@ -4,6 +4,7 @@ import { projects } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Github } from 'lucide-react'
+import { MDXContent } from '@/components/mdx-content'
 
 interface ProjectPageProps {
   params: Promise<{
@@ -76,10 +77,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* MAIN CONTENT */}
           <div className="lg:col-span-8">
-            <div className="prose prose-lg max-w-none">
-              {/* TODO: Add content rendering when markdown issue is resolved */}
-              <p className="text-muted-foreground">Content rendering temporarily unavailable during migration.</p>
-            </div>
+            <MDXContent source={project.content} />
           </div>
 
           {/* SIDEBAR */}

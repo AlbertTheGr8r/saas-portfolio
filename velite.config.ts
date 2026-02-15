@@ -16,6 +16,8 @@ const posts = defineCollection({
       draft: s.boolean().default(false),
       archived: s.boolean().default(false),
       coverImage: s.string().optional(),
+      // Use raw() to get markdown content as string, process with next-mdx-remote
+      content: s.raw(),
       metadata: s.metadata(),
     })
     .transform((data) => ({
@@ -45,6 +47,8 @@ const projects = defineCollection({
       demoUrl: s.string().optional(),
       repoUrl: s.string().optional(),
       techStack: s.array(s.string()).default([]),
+      // Use raw() to get markdown content as string, process with next-mdx-remote
+      content: s.raw(),
       metadata: s.metadata(),
     })
     .transform((data) => ({
