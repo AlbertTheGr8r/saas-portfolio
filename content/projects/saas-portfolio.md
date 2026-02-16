@@ -1,7 +1,7 @@
 ---
-title: "SaaS Portfolio Template"
-date: "2024-02-14"
-status: "completed"
+title: "This site itself"
+date: "2026-02-14"
+status: "ongoing"
 excerpt: "A modern portfolio template built with Next.js, Tailwind CSS, and neobrutalism design."
 tags: ["nextjs", "tailwind", "portfolio"]
 techStack: ["Next.js", "Tailwind CSS", "TypeScript", "shadcn/ui"]
@@ -12,7 +12,7 @@ draft: false
 
 # SaaS Portfolio Template
 
-A modern, responsive portfolio template designed with neobrutalism aesthetics.
+A modern, responsive portfolio template designed with neobrutalism aesthetics. The original template was lifted from [Neobrutalism Templates](https://github.com/neobrutalism-templates/saas). It's gone as of this writing, but I'm keeping it here for reference.
 
 ## Features
 
@@ -21,11 +21,10 @@ A modern, responsive portfolio template designed with neobrutalism aesthetics.
 - Dark mode support
 - Static export for GitHub Pages
 - Contentlayer for blog/projects
-- Neobrutalism design system
 
 ## Tech Stack
 
-This project uses modern web technologies:
+I'm using this as a learning project to familiarize myself with modern web development. I'm also using it as a portfolio template for my own projects.
 
 - **Next.js** - React framework
 - **Tailwind CSS** - Utility-first CSS
@@ -46,4 +45,4 @@ pnpm dev
 pnpm build
 ```
 
-The project is optimized for static export and can be deployed to GitHub Pages or any static hosting provider.
+The project is optimized for static export and can be deployed to GitHub Pages or any static hosting provider. If things go well, the push should run the build.

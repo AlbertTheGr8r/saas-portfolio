@@ -1,6 +1,6 @@
 ---
-title: "Welcome to My Blog"
-date: "2024-02-14"
+title: "Test post"
+date: "2026-02-14"
 excerpt: "This is my first blog post using Contentlayer and MDX. Learn about how I built this static site."
 tags: ["nextjs", "contentlayer", "mdx"]
 featured: true
@@ -9,7 +9,7 @@ draft: false
 
 # Welcome to My Blog
 
-This is my first blog post using **Contentlayer** and **MDX** to build a fully static site. No backend required!
+This is my first blog post using **Contentlayer** and **MDX** to build a fully static site. No backend required since that's what a static site is.
 
 ## Why Static?
 
@@ -31,6 +31,8 @@ function greet(name: string): string {
 console.log(greet('World'))
 ```
 
+Seeing color? Eyy, welcome from the future. As of posting it's not yet implemented.
+
 ## Lists
 
 Here's what I'm using:
@@ -39,14 +41,14 @@ Here's what I'm using:
 - Contentlayer for content management
 - MDX for rich content
 - Tailwind CSS for styling
-- Neobrutalism design system
+- [Neobrutalism design system](https://www.neobrutalism.dev/)
 
 ## Links
 
-Check out my [projects](/projects) or go back [home](/).
+Another aspect of this project is [projects](/projects), or go back [home](/).
 
 ## Blockquote
 
-> "The best code is no code at all."
+> "Integration. Integration. Integration."
 
-Thanks for reading!
+Thanks for the time.
