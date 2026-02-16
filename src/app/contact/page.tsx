@@ -1,6 +1,5 @@
-import { Mail, Github, Linkedin } from 'lucide-react'
+import { Mail, Github } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import Links from '@/components/links'
 
 export default function ContactPage() {
   return (
@@ -9,7 +8,7 @@ export default function ContactPage() {
         <header className="mb-12">
           <h1 className="text-5xl font-heading">Contact</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Get in touch. I&apos;d love to hear from you.
+            Get in touch...
           </p>
         </header>
 
@@ -17,7 +16,7 @@ export default function ContactPage() {
           <section>
             <h2 className="mb-6 text-2xl font-heading">Email</h2>
             <Button size="lg" asChild>
-              <a href="mailto:albert@antiparity.net">
+              <a href="mailto:AlbertFlorin93@gmail.com">
                 <Mail className="mr-2 h-5 w-5" />
                 albert@antiparity.net
               </a>
@@ -37,7 +36,7 @@ export default function ContactPage() {
                   GitHub
                 </a>
               </Button>
-              <Button variant="neutral" size="lg" asChild>
+              {/* <Button variant="neutral" size="lg" asChild>
                 <a
                   href="https://linkedin.com/in/albertflorin"
                   target="_blank"
@@ -46,15 +45,15 @@ export default function ContactPage() {
                   <Linkedin className="mr-2 h-5 w-5" />
                   LinkedIn
                 </a>
-              </Button>
+              </Button> */}
             </div>
           </section>
         </div>
 
-        <section className="mt-16">
+        {/* <section className="mt-16">
           <h2 className="mb-6 text-2xl font-heading">Other Links</h2>
           <Links />
-        </section>
+        </section> */}
       </div>
     </div>
   )

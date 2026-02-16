@@ -91,7 +91,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* SIDEBAR - Spec Card */}
           <aside className="lg:col-span-4 lg:sticky lg:top-24 h-fit">
-            <div className="rounded-2xl border-2 border-border p-6 space-y-8 dark:border-darkBorder">
+            <div className="rounded-2xl border-2 border-border bg-background p-6 space-y-8 dark:border-darkBorder">
               
               {/* Project Info */}
               <div>

@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { cn } from '@/lib/utils'
+import { X, Diamond, ChevronDown } from 'lucide-react'
 
 interface MDXContentProps {
   source: string
@@ -29,7 +30,7 @@ export function MDXContent({ source, className }: MDXContentProps) {
               <h2
                 id={id}
                 className={cn(
-                  'mt-24 mb-8 text-4xl font-heading tracking-tight scroll-mt-24 border-t-4 border-border dark:border-darkBorder pt-12',
+                  'mt-24 mb-8 text-4xl font-heading tracking-tight scroll-mt-24 border-t-4 border-border dark:border-main pt-12',
                   className
                 )}
                 {...props}
@@ -65,7 +66,7 @@ export function MDXContent({ source, className }: MDXContentProps) {
           blockquote: ({ className, children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
             <blockquote
               className={cn(
-                'mt-8 mb-8 rounded-base border-2 border-border dark:border-darkBorder bg-secondary-background p-6 shadow-shadow dark:shadow-darkShadow',
+                'mt-8 mb-8 rounded-base border-2 border-border dark:border-darkBorder bg-background p-6 shadow-shadow dark:shadow-darkShadow',
                 className
               )}
               {...props}
@@ -83,23 +84,23 @@ export function MDXContent({ source, className }: MDXContentProps) {
           code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
             <code
               className={cn(
-                'relative rounded bg-secondary-background px-[0.3rem] py-[0.2rem] font-mono text-sm',
+                'relative rounded bg-background px-[0.3rem] py-[0.2rem] font-mono text-sm',
                 className
               )}
               {...props}
             />
           ),
           pre: ({ className, children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-            <div className="mb-6 rounded-base border-2 border-border dark:border-darkBorder bg-secondary-background shadow-shadow dark:shadow-darkShadow overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-2 border-b-2 border-border dark:border-darkBorder bg-bg dark:bg-darkBg">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="ml-2 text-xs text-muted-foreground font-mono">code</span>
+            <div className="mb-6 rounded-base border-2 border-border dark:border-darkBorder bg-background shadow-shadow dark:shadow-darkShadow overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-2 border-b-2 border-border dark:border-darkBorder bg-main">
+                <X className="w-4 h-4 text-black stroke-[2.5] mx-1.5" />
+                <Diamond className="w-3 h-3 text-black stroke-[4] mx-1.5" />
+                <ChevronDown className="w-5 h-5 text-black stroke-[2.5] mx-1.5" />
+                <span className="ml-auto text-black font-mono">code</span>
               </div>
               <pre
                 className={cn(
-                  'overflow-x-auto p-4 text-sm',
+                  'overflow-x-auto p-4 text-sm bg-background',
                   className
                 )}
                 {...props}

@@ -9,33 +9,45 @@ export function useActiveHeading(headingIds: string[]) {
     if (headingIds.length === 0) return
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the first heading that is intersecting (in view)
-        const visibleHeadings = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+      () => {
+        const elements = headingIds.map((id) => document.getElementById(id))
+        const triggerLine = window.innerHeight * 0.25 // 25% down the screen
 
-        if (visibleHeadings.length > 0) {
-          setActiveId(visibleHeadings[0].target.id)
+        // Find the index of the current section
+        // We look for the last element that has passed the trigger line
+        let currentIdx = -1
+        for (let i = 0; i < elements.length; i++) {
+          const el = elements[i]
+          if (el && el.getBoundingClientRect().top <= triggerLine) {
+            currentIdx = i
+          }
+        }
+
+        // If we found a passed heading, set it
+        if (currentIdx !== -1) {
+          setActiveId(headingIds[currentIdx])
+        } else if (window.scrollY > 100 && headingIds.length > 0) {
+          // FALLBACK: If we've scrolled a bit but haven't hit the 
+          // trigger for the first heading yet, default to the first one.
+          setActiveId(headingIds[0])
+        } else {
+          // Truly at the top of the page (Hero/Title area)
+          setActiveId('')
         }
       },
       {
-        rootMargin: '-20% 0px -60% 0px',
-        threshold: 0,
+        // Track the full page height to ensure constant updates
+        rootMargin: '0px 0px -10% 0px',
+        threshold: [0, 1],
       }
     )
 
-    // Observe all heading elements
     headingIds.forEach((id) => {
       const element = document.getElementById(id)
-      if (element) {
-        observer.observe(element)
-      }
+      if (element) observer.observe(element)
     })
 
-    return () => {
-      observer.disconnect()
-    }
+    return () => observer.disconnect()
   }, [headingIds])
 
   return activeId

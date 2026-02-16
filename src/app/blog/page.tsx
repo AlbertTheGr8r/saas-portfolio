@@ -6,7 +6,7 @@ import { Calendar } from 'lucide-react'
 
 function PostCard({ post }: { post: typeof posts[0] }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Calendar className="h-4 w-4" />
@@ -16,7 +16,8 @@ function PostCard({ post }: { post: typeof posts[0] }) {
         </div>
         
         <h2 className="mt-3 text-xl font-heading">
-          <Link href={post.url} className="hover:text-main transition-colors">
+          <Link href={post.url}>
+            <span className="absolute inset-0 z-0" aria-hidden="true" />
             {post.title}
           </Link>
         </h2>
@@ -28,7 +29,7 @@ function PostCard({ post }: { post: typeof posts[0] }) {
         )}
         
         {post.tags.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 relative z-10">
             {post.tags.map((tag) => (
               <Badge key={tag} variant="neutral" className="text-xs">
                 {tag}

@@ -3,7 +3,7 @@
 import { format, parseISO } from 'date-fns'
 import { Badge } from '@/components/ui/badge'
 import { ShareButtons } from '@/components/share-buttons'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import { useActiveHeading } from '@/hooks/use-active-heading'
 
@@ -19,26 +19,35 @@ interface TableOfContentsProps {
 
 function TableOfContents({ items, activeId }: TableOfContentsProps) {
   return (
-    <nav className="hidden lg:block sticky top-24">
-      <h3 className="text-xs uppercase tracking-wide text-muted-foreground mb-6 font-heading">
-        here.
+    <nav className="hidden lg:block sticky top-48 w-full max-w-[160px]">
+      {/* The Label: Shifted left to break the alignment slightly */}
+      <h3 className="text-[10px] uppercase tracking-widest text-muted-foreground/40 font-mono mb-4 -ml-4">
+        [ Content ]
       </h3>
-      <ul className="space-y-0">
-        {items.map((item) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className={cn(
-                'block py-2 px-3 -mx-3 text-sm transition-none',
-                activeId === item.id
-                  ? 'bg-main text-main-foreground font-medium'
-                  : 'text-muted-foreground hover:text-foreground'
-              )}
-            >
-              {item.text}
-            </a>
-          </li>
-        ))}
+
+      <ul className="relative space-y-0 border-l border-black dark:border-white/20">
+        {items.map((item) => {
+          const isActive = activeId === item.id;
+          return (
+            <li key={item.id} className="group">
+              <a
+                href={`#${item.id}`}
+                className={cn(
+                  "block py-2 pl-4 text-[11px] uppercase transition-none relative",
+                  isActive
+                    ? "text-foreground font-black scale-105 origin-left" 
+                    : "text-muted-foreground/60 hover:text-foreground"
+                )}
+              >
+                {/* The Active "Ink" Strike */}
+                {isActive && (
+                  <div className="absolute left-[-2px] top-0 bottom-0 w-[4px] bg-main shadow-[2px_2px_0px_rgba(0,0,0,1)]" />
+                )}
+                {item.text}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   )
@@ -95,23 +104,22 @@ export function StructuredEditorialLayout({
         </header>
 
         {/* HARD DIVIDER */}
-        <div className="border-t-4 border-border dark:border-darkBorder mb-16" />
+        <div className="border-t-4 border-border dark:border-main mb-16" />
 
-        {/* ASYMMETRIC CONTENT GRID - 9/3 split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          {/* MAIN CONTENT - Dominant 9 columns */}
+          {/* MAIN CONTENT */}
           <div className="lg:col-span-9">
             {children}
           </div>
 
-          {/* TOC RAIL - Subordinate 3 columns */}
+          {/* TOC RAIL */}
           <div className="lg:col-span-3 lg:pt-4">
             <TableOfContents items={tocItems} activeId={activeId} />
           </div>
         </div>
 
         {/* SECTION DIVIDER */}
-        <div className="border-t-4 border-border dark:border-darkBorder my-20" />
+        <div className="border-t-4 border-border dark:border-main my-20" />
 
         {/* FOOTER META - Full width with asymmetry */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -143,7 +151,7 @@ export function StructuredEditorialLayout({
         </div>
 
         {/* HARD FINAL DIVIDER */}
-        <div className="border-t-4 border-border dark:border-darkBorder my-16" />
+        <div className="border-t-4 border-border dark:border-main my-16" />
 
         {/* FOOTER NAVIGATION */}
         {footer && (

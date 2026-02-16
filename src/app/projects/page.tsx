@@ -7,7 +7,7 @@ import { ExternalLink, Github, Calendar } from 'lucide-react'
 
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -22,7 +22,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         </div>
         
         <h2 className="mt-3 text-xl font-heading">
-          <Link href={project.url} className="hover:text-main transition-colors">
+          <Link href={project.url}>
+            <span className="absolute inset-0 z-0" aria-hidden="true" />
             {project.title}
           </Link>
         </h2>
@@ -34,7 +35,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         )}
         
         {project.techStack.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 relative z-10">
             {project.techStack.map((tech) => (
               <Badge key={tech} variant="neutral" className="text-xs">
                 {tech}
@@ -43,7 +44,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           </div>
         )}
 
-        <div className="mt-6 flex gap-3">
+        <div className="mt-6 flex gap-3 relative z-10">
           {project.demoUrl && (
             <Button size="sm" variant="neutral" asChild>
               <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
@@ -53,7 +54,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
             </Button>
           )}
           {project.repoUrl && (
-            <Button size="sm" variant="noShadow" asChild>
+            <Button size="sm" variant="noShadow" className="mt-1" asChild>
               <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 Code

@@ -50,7 +50,7 @@ export function EditorialLayout({
         </header>
 
         {/* HARD DIVIDER */}
-        <div className="border-t-4 border-border dark:border-darkBorder mb-16" />
+        <div className="border-t-4 border-border dark:border-main mb-16" />
 
         {/* CONTENT - Full width reading */}
         <div className="max-w-3xl">
@@ -58,7 +58,7 @@ export function EditorialLayout({
         </div>
 
         {/* SECTION DIVIDER */}
-        <div className="border-t-4 border-border dark:border-darkBorder my-20" />
+        <div className="border-t-4 border-border dark:border-main my-20" />
 
         {/* FOOTER META */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl">
@@ -86,7 +86,7 @@ export function EditorialLayout({
         </div>
 
         {/* HARD FINAL DIVIDER */}
-        <div className="border-t-4 border-border dark:border-darkBorder my-16" />
+        <div className="border-t-4 border-border dark:border-main my-16" />
 
         {/* FOOTER NAVIGATION */}
         {footer && (
