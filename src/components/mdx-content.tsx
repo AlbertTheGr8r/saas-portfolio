@@ -25,7 +25,7 @@ export function MDXContent({ source, className }: MDXContentProps) {
           h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
             <h2
               className={cn(
-                'mt-10 mb-4 text-3xl font-heading tracking-tight scroll-mt-24',
+                'mt-20 mb-6 text-3xl font-heading tracking-tight scroll-mt-24 border-t-2 border-border dark:border-darkBorder pt-10',
                 className
               )}
               {...props}
@@ -55,14 +55,23 @@ export function MDXContent({ source, className }: MDXContentProps) {
           li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
             <li className={cn('leading-7', className)} {...props} />
           ),
-          blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
+          blockquote: ({ className, children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
             <blockquote
               className={cn(
-                'mt-6 border-l-4 border-main bg-secondary-background pl-6 py-4 italic mb-6',
+                'mt-8 mb-8 rounded-base border-2 border-border dark:border-darkBorder bg-secondary-background p-6 shadow-shadow dark:shadow-darkShadow',
                 className
               )}
               {...props}
-            />
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-main flex items-center justify-center">
+                  <span className="text-main-foreground font-heading text-lg">!</span>
+                </div>
+                <div className="flex-1 italic text-foreground">
+                  {children}
+                </div>
+              </div>
+            </blockquote>
           ),
           code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
             <code
@@ -73,14 +82,24 @@ export function MDXContent({ source, className }: MDXContentProps) {
               {...props}
             />
           ),
-          pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-            <pre
-              className={cn(
-                'mb-6 overflow-x-auto rounded-base border-2 border-border bg-secondary-background p-4',
-                className
-              )}
-              {...props}
-            />
+          pre: ({ className, children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
+            <div className="mb-6 rounded-base border-2 border-border dark:border-darkBorder bg-secondary-background shadow-shadow dark:shadow-darkShadow overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-2 border-b-2 border-border dark:border-darkBorder bg-bg dark:bg-darkBg">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                <div className="w-3 h-3 rounded-full bg-green-500" />
+                <span className="ml-2 text-xs text-muted-foreground font-mono">code</span>
+              </div>
+              <pre
+                className={cn(
+                  'overflow-x-auto p-4 text-sm',
+                  className
+                )}
+                {...props}
+              >
+                {children}
+              </pre>
+            </div>
           ),
           hr: ({ ...props }) => (
             <hr className="my-8 border-border" {...props} />
