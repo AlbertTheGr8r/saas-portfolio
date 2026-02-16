@@ -29,7 +29,7 @@ export function MDXContent({ source, className }: MDXContentProps) {
               <h2
                 id={id}
                 className={cn(
-                  'mt-20 mb-6 text-3xl font-heading tracking-tight scroll-mt-24 border-t-2 border-border dark:border-darkBorder pt-10',
+                  'mt-24 mb-8 text-4xl font-heading tracking-tight scroll-mt-24 border-t-4 border-border dark:border-darkBorder pt-12',
                   className
                 )}
                 {...props}
