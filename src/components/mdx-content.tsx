@@ -22,15 +22,22 @@ export function MDXContent({ source, className }: MDXContentProps) {
               {...props}
             />
           ),
-          h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-            <h2
-              className={cn(
-                'mt-20 mb-6 text-3xl font-heading tracking-tight scroll-mt-24 border-t-2 border-border dark:border-darkBorder pt-10',
-                className
-              )}
-              {...props}
-            />
-          ),
+          h2: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+            const text = String(children || '')
+            const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+            return (
+              <h2
+                id={id}
+                className={cn(
+                  'mt-20 mb-6 text-3xl font-heading tracking-tight scroll-mt-24 border-t-2 border-border dark:border-darkBorder pt-10',
+                  className
+                )}
+                {...props}
+              >
+                {children}
+              </h2>
+            )
+          },
           h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
             <h3
               className={cn(
