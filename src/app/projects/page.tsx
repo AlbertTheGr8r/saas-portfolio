@@ -1,0 +1,99 @@
+import Link from 'next/link'
+import { compareDesc, format, parseISO } from 'date-fns'
+import { projects } from '.velite'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ExternalLink, Github, Calendar } from 'lucide-react'
+
+function ProjectCard({ project }: { project: typeof projects[0] }) {
+  return (
+    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+      <div className="flex flex-1 flex-col p-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Calendar className="h-4 w-4" />
+            <time dateTime={project.date}>
+              {format(parseISO(project.date), 'MMM yyyy')}
+            </time>
+          </div>
+          <Badge variant={project.status === 'completed' ? 'default' : 'neutral'}>
+            {project.status}
+          </Badge>
+        </div>
+        
+        <h2 className="mt-3 text-xl font-heading">
+          <Link href={project.url}>
+            <span className="absolute inset-0 z-0" aria-hidden="true" />
+            {project.title}
+          </Link>
+        </h2>
+        
+        {project.excerpt && (
+          <p className="mt-3 line-clamp-3 text-muted-foreground text-sm">
+            {project.excerpt}
+          </p>
+        )}
+        
+        {project.techStack.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2 relative z-10">
+            {project.techStack.map((tech) => (
+              <Badge key={tech} variant="neutral" className="text-xs">
+                {tech}
+              </Badge>
+            ))}
+          </div>
+        )}
+
+        <div className="mt-6 flex gap-3 relative z-10">
+          {project.demoUrl && (
+            <Button size="sm" variant="neutral" asChild>
+              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Demo
+              </a>
+            </Button>
+          )}
+          {project.repoUrl && (
+            <Button size="sm" variant="noShadow" className="mt-1" asChild>
+              <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                Code
+              </a>
+            </Button>
+          )}
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export default function ProjectsPage() {
+  const allProjects = projects
+    .filter((project) => !project.draft && !project.archived)
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+
+  return (
+    <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+      <div className="mx-auto max-w-6xl px-5 py-12 md:py-20">
+        <header className="mb-12">
+          <h1 className="text-4xl md:text-5xl font-heading">Projects</h1>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+            A collection of things I&apos;ve built.
+          </p>
+        </header>
+
+        {allProjects.length > 0 ? (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {allProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-base border-2 border-border bg-secondary-background p-12 text-center dark:border-darkBorder">
+            <p className="text-muted-foreground">No projects yet. Check back soon!</p>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "SaaS Portfolio Template",
+    "slug": "saas-portfolio",
+    "date": "2024-02-14T00:00:00.000Z",
+    "status": "completed",
+    "excerpt": "A modern portfolio template built with Next.js, Tailwind CSS, and neobrutalism design.",
+    "tags": [
+      "nextjs",
+      "tailwind",
+      "portfolio"
+    ],
+    "draft": false,
+    "archived": false,
+    "demoUrl": "https://antiparity.net",
+    "repoUrl": "https://github.com/AlbertTheGr8r/saas-portfolio",
+    "techStack": [
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "shadcn/ui"
+    ],
+    "content": "# SaaS Portfolio Template\n\nA modern, responsive portfolio template designed with neobrutalism aesthetics.\n\n## Features\n\n- Next.js 14 with App Router\n- Tailwind CSS for styling\n- Dark mode support\n- Static export for GitHub Pages\n- Contentlayer for blog/projects\n- Neobrutalism design system\n\n## Tech Stack\n\nThis project uses modern web technologies:\n\n- **Next.js** - React framework\n- **Tailwind CSS** - Utility-first CSS\n- **TypeScript** - Type safety\n- **shadcn/ui** - Component library\n- **Contentlayer** - Content management\n\n## Development\n\n```bash\n# Install dependencies\npnpm install\n\n# Run dev server\npnpm dev\n\n# Build for production\npnpm build\n```\n\nThe project is optimized for static export and can be deployed to GitHub Pages or any static hosting provider.",
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 98
+    },
+    "url": "/projects/saas-portfolio"
+  }
+]

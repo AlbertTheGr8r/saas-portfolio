@@ -39,7 +39,20 @@ next-env.d.ts
 .contentlayer/
 
 # generated feeds
-public/atom.xml
-public/feed.json
-public/feed.xml
-public/content-index.json
+/public/feed.xml
+/public/feed.json
+/public/atom.xml
+/public/content-index.json
+
+# reports
+.reports/
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# visual regression test snapshots (generated on first run)
+**/snapshots/*.png
+**/snapshots/*.jpg
+**/snapshots/*.jpeg
