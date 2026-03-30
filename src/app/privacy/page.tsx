@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
             <li>Google Analytics cookies (if applicable) - Used to analyze site traffic</li>
           </ul>
           <p className="mt-4">
-            You may opt out of the use of the DART cookie by visiting the{' '}
+            You may opt out of the use of the DART cookie by visiting the{&apos; &apos;}
             <a 
               href="https://adssettings.google.com/" 
               target="_blank" 
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
               className="underline hover:text-primary"
             >
               Google Ad Settings
-            </a>{' '}
+            </a>{&apos; &apos;}
             page.
           </p>
         </section>
@@ -45,12 +45,12 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="mb-4 font-heading text-2xl font-semibold">Third-Party Advertising</h2>
           <p>
-            Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use 
+            Google, as a third-party vendor, uses cookies to serve ads on our site. Google&apos;s use 
             of the DART cookie enables it to serve advertisements to our users based on their 
             visit to our site and other sites on the internet.
           </p>
           <p className="mt-4">
-            Users may opt out of the use of cookies for advertising purposes by visiting the{' '}
+            Users may opt out of the use of cookies for advertising purposes by visiting the{&apos; &apos;}
             <a 
               href="https://www.aboutads.info/choices/" 
               target="_blank" 
@@ -58,8 +58,8 @@ export default function PrivacyPolicy() {
               className="underline hover:text-primary"
             >
               About Ads
-            </a>{' '}
-            page or by opting out through the{' '}
+            </a>{&apos; &apos;}
+            page or by opting out through the{&apos; &apos;}
             <a 
               href="https://policies.google.com/technologies/ads" 
               target="_blank" 
@@ -92,7 +92,7 @@ export default function PrivacyPolicy() {
           <h2 className="mb-4 font-heading text-2xl font-semibold">Contact Us</h2>
           <p>
             If you have any questions about this Privacy Policy, please contact us through the 
-            site's contact page.
+            site&apos;s contact page.
           </p>
         </section>
       </div>
