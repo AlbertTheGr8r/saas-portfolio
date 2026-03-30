@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Footer() {
   return (
     <footer className="m500:text-sm bg-secondary-background z-30 px-5 py-5 text-center font-base">
@@ -9,6 +11,10 @@ export default function Footer() {
       >
         Github
       </a>
+      .{' '}
+      <Link href="/privacy" className="font-heading underline">
+        Privacy Policy
+      </Link>
       .
     </footer>
   )
