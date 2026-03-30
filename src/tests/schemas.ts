@@ -22,7 +22,7 @@ export const PostSchema = z.object({
 // Project schema
 export const ProjectSchema = z.object({
   ...commonFields,
-  status: z.enum(['completed', 'in-progress', 'archived']).default('completed'),
+  status: z.enum(['completed', 'in-progress', 'ongoing', 'archived']).default('completed'),
   demoUrl: z.string().url().optional().or(z.literal('')),
   repoUrl: z.string().url().optional().or(z.literal('')),
   techStack: z.array(z.string()).default([]),

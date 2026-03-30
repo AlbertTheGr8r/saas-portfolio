@@ -118,7 +118,7 @@ describe('Content Integrity Tests', () => {
         })
 
         it('should have valid status', () => {
-          expect(['completed', 'in-progress', 'archived']).toContain(parsed.data.status || 'completed')
+          expect(['completed', 'in-progress', 'ongoing', 'archived']).toContain(parsed.data.status || 'completed')
         })
 
         if (parsed.data.demoUrl) {

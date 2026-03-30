@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
             <li>Google Analytics cookies (if applicable) - Used to analyze site traffic</li>
           </ul>
           <p className="mt-4">
-            You may opt out of the use of the DART cookie by visiting the{&apos; &apos;}
+            You may opt out of the use of the DART cookie by visiting the{" "}
             <a 
               href="https://adssettings.google.com/" 
               target="_blank" 
@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
               className="underline hover:text-primary"
             >
               Google Ad Settings
-            </a>{&apos; &apos;}
+            </a>{" "}
             page.
           </p>
         </section>
@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
             visit to our site and other sites on the internet.
           </p>
           <p className="mt-4">
-            Users may opt out of the use of cookies for advertising purposes by visiting the{&apos; &apos;}
+            Users may opt out of the use of cookies for advertising purposes by visiting the{" "}
             <a 
               href="https://www.aboutads.info/choices/" 
               target="_blank" 
@@ -58,8 +58,8 @@ export default function PrivacyPolicy() {
               className="underline hover:text-primary"
             >
               About Ads
-            </a>{&apos; &apos;}
-            page or by opting out through the{&apos; &apos;}
+            </a>{" "}
+            page or by opting out through the{" "}
             <a 
               href="https://policies.google.com/technologies/ads" 
               target="_blank" 

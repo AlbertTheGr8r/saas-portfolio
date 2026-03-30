@@ -38,7 +38,7 @@ const projects = defineCollection({
       slug: s.path(),
       date: s.isodate(),
       updated: s.isodate().optional(),
-      status: s.enum(['completed', 'in-progress', 'archived']).default('completed'),
+      status: s.enum(['completed', 'in-progress', 'ongoing', 'archived']).default('completed'),
       excerpt: s.string().optional(),
       tags: s.array(s.string()).default([]),
       draft: s.boolean().default(false),
