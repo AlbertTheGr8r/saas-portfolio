@@ -1,21 +1,84 @@
 [
   {
-    "title": "Welcome to My Blog",
+    "title": "Modern Hydrography: High Precision, Higher Responsibility",
+    "slug": "modern-hydrography-high-precision-higher-responsibility",
+    "date": "2026-03-06T00:00:00.000Z",
+    "excerpt": "Exploring the responsibilities of engineers as equipment once exclusive to corporations becomes accessible to individual practitioners in the era of accessible data.",
+    "tags": [
+      "hydrography",
+      "engineering-responsibility",
+      "data-quality",
+      "profession"
+    ],
+    "featured": true,
+    "draft": false,
+    "archived": false,
+    "content": "# Modern Hydrography: High Precision, Higher Responsibility\n\nAs we enter a paradigm shift towards more accessible data, with equipment that was once corporation-only becoming available to individual engineers, we must examine what this means for our professional responsibilities.\n\n## The Changing Landscape of Hydrographic Surveying\n\nThe democratization of hydrographic technology represents a significant shift in our profession. What once required substantial corporate investment can now be achieved by individual practitioners with access to affordable, high-precision equipment.\n\n### Quality of Data: What's Different\n\nThe data available to us has changed dramatically:\n\n- **Higher Resolution**: Modern multibeam and singlebeam systems offer unprecedented detail\n- **Real-Time Processing**: Cloud-based solutions enable immediate data analysis\n- **Broader Accessibility**: Community-shared datasets expand our knowledge base\n\nHowever, with these advancements come new challenges in ensuring data quality and reliability.\n\n## Our Responsibilities Remain the Same\n\nDespite the evolution of our tools, the fundamental responsibilities of engineers remain constant:\n\n1. **Professional Integrity**: Upholding ethical standards regardless of tool complexity\n2. **Data Validation**: Ensuring accuracy through proper QA/QC procedures\n3. **Continuous Learning**: Staying current with evolving technologies and methodologies\n4. **Public Safety**: Prioritizing the protection of life and property in all operations\n5. **Professional Development**: Contributing to the advancement of the field\n\n## The Quality Question\n\nWhile we now have access to more sophisticated equipment, the quality of our output depends not on the tools we use, but on our understanding of:\n\n- Proper calibration and deployment procedures\n- Environmental factors affecting measurements\n- Data interpretation and analysis techniques\n- Clear communication of limitations and uncertainties\n\n## Conclusion\n\nAs hydrographic engineers, we stand at the intersection of traditional surveying principles and cutting-edge technology. Our responsibility is to harness these advancements while maintaining the professional standards that define our profession.\n\nThe accessibility of powerful tools does not lower the bar—it raises it. It demands greater understanding, more rigorous validation, and unwavering commitment to professional excellence.",
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 305
+    },
+    "url": "/blog/modern-hydrography-high-precision-higher-responsibility"
+  },
+  {
+    "title": "Science Communications: Control Point Recovery and the Shift in Perspective",
+    "slug": "science-communications-control-point-recovery",
+    "date": "2026-02-10T00:00:00.000Z",
+    "excerpt": "An invited talk on science communications and control point recovery presented to the Geodetic Engineers of the Philippines Region V, Naga City Chapter.",
+    "tags": [
+      "science-communications",
+      "geodesy",
+      "control-point",
+      "mapping"
+    ],
+    "featured": true,
+    "draft": false,
+    "archived": false,
+    "content": "# Science Communications: Control Point Recovery and the Shift in Perspective\n\nI was invited as a speaker to present to the **Geodetic Engineers of the Philippines Region V, Naga City Chapter** on the importance of science communications in the context of control point recovery.\n\n## The Importance of Science Communications\n\nEffective science communications bridges the gap between technical expertise and public understanding. As geodetic engineers, communicating our work to stakeholders, policymakers, and the general public is crucial for the advancement of spatial infrastructure.\n\n## Control Point Recovery: Why We Need a Shift in Perspective\n\nControl points form the foundation of accurate mapping and surveying. However, the recovery and maintenance of these points face challenges that require us to rethink our approaches:\n\n- **Legacy Systems**: Traditional control networks were established with methodologies that may not align with current technological capabilities\n- **Data Accessibility**: The shift toward open data platforms demands new communication strategies\n- **Community Involvement**: Engaging local communities in control point preservation\n\n## Featured Application\n\nDuring this presentation, I showcased my developed application **control.affdc.net**, which demonstrates how modern web technologies can support geodetic workflows and improve science communications.\n\nThe application exemplifies the integration of technical precision with accessible user interfaces, making complex geospatial data more understandable for diverse audiences.\n\n## Key Takeaways\n\n1. Communication is as important as technical accuracy\n2. Modern tools enable better stakeholder engagement\n3. The geodetic community must adapt to changing data landscapes\n4. Collaborative approaches lead to more sustainable infrastructure",
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 235
+    },
+    "url": "/blog/science-communications-control-point-recovery"
+  },
+  {
+    "title": "An Analysis of Smart City Development Frameworks",
+    "slug": "smart-city-development-frameworks",
+    "date": "2025-10-07T00:00:00.000Z",
+    "excerpt": "A comprehensive analysis of smart city development frameworks published through the University of the Philippines Center for Integrative and Development Studies.",
+    "tags": [
+      "smart-city",
+      "urban-development",
+      "research",
+      "project-smart-metro"
+    ],
+    "featured": false,
+    "draft": false,
+    "archived": false,
+    "content": "# An Analysis of Smart City Development Frameworks\n\nThis research was published under the **University of the Philippines Center for Integrative and Development Studies (CIDs)** as part of my professional development in **Project SMART METRO**.\n\n## Overview\n\nSmart city development represents a transformative approach to urban planning and management, leveraging technology and data-driven solutions to enhance the quality of life for urban residents. This analysis examines various frameworks for implementing smart city initiatives, evaluating their effectiveness in addressing contemporary urban challenges.\n\n## Key Findings\n\nThe study explores multiple approaches to smart city development, including:\n\n- **Technology Infrastructure**: The role of IoT devices, sensors, and connectivity in creating responsive urban systems\n- **Data Governance**: Frameworks for managing and protecting citizen data in smart city ecosystems\n- **Stakeholder Engagement**: Strategies for involving community members in smart city planning\n- **Sustainability Integration**: Approaches to balancing technological advancement with environmental responsibility\n\n## Affiliated Links\n\n- [Project SMART METRO](https://www.facebook.com/profile.php?id=61578139649617)\n- [Full Paper (PDF)](https://cids.up.edu.ph/wp-content/uploads/2025/08/An-Analysis-of-Smart-City-Development-Frameworks.pdf)",
+    "metadata": {
+      "readingTime": 1,
+      "wordCount": 149
+    },
+    "url": "/blog/smart-city-development-frameworks"
+  },
+  {
+    "title": "Test post",
     "slug": "welcome",
-    "date": "2024-02-14T00:00:00.000Z",
+    "date": "2026-02-14T00:00:00.000Z",
     "excerpt": "This is my first blog post using Contentlayer and MDX. Learn about how I built this static site.",
     "tags": [
       "nextjs",
       "contentlayer",
       "mdx"
     ],
-    "featured": true,
+    "featured": false,
     "draft": false,
     "archived": false,
-    "content": "# Welcome to My Blog\n\nThis is my first blog post using **Contentlayer** and **MDX** to build a fully static site. No backend required!\n\n## Why Static?\n\nStatic sites are:\n- Fast (pre-rendered HTML)\n- Secure (no server to hack)\n- Cheap to host (GitHub Pages is free)\n- Easy to version control (everything is in git)\n\n## Code Example\n\nHere's some TypeScript code:\n\n```typescript\nfunction greet(name: string): string {\n  return `Hello, ${name}!`\n}\n\nconsole.log(greet('World'))\n```\n\n## Lists\n\nHere's what I'm using:\n\n- Next.js 14 with App Router\n- Contentlayer for content management\n- MDX for rich content\n- Tailwind CSS for styling\n- Neobrutalism design system\n\n## Links\n\nCheck out my [projects](/projects) or go back [home](/).\n\n## Blockquote\n\n> \"The best code is no code at all.\"\n\nThanks for reading!",
+    "content": "# Welcome to My Blog\r\n\r\nThis is my first blog post using **Contentlayer** and **MDX** to build a fully static site. No backend required since that's what a static site is.\r\n\r\n## Why Static?\r\n\r\nStatic sites are:\r\n- Fast (pre-rendered HTML)\r\n- Secure (no server to hack)\r\n- Cheap to host (GitHub Pages is free)\r\n- Easy to version control (everything is in git)\r\n\r\n## Code Example\r\n\r\nHere's some TypeScript code:\r\n\r\n```typescript\r\nfunction greet(name: string): string {\r\n  return `Hello, ${name}!`\r\n}\r\n\r\nconsole.log(greet('World'))\r\n```\r\n\r\nSeeing color? Eyy, welcome from the future. As of posting it's not yet implemented.\r\n\r\n## Lists\r\n\r\nHere's what I'm using:\r\n\r\n- Next.js 14 with App Router\r\n- Contentlayer for content management\r\n- MDX for rich content\r\n- Tailwind CSS for styling\r\n- [Neobrutalism design system](https://www.neobrutalism.dev/)\r\n\r\n## Links\r\n\r\nAnother aspect of this project is [projects](/projects), or go back [home](/).\r\n\r\n## Blockquote\r\n\r\n> \"Integration. Integration. Integration.\"\r\n\r\nThanks for the time.",
     "metadata": {
       "readingTime": 1,
-      "wordCount": 116
+      "wordCount": 136
     },
     "url": "/blog/welcome"
   }

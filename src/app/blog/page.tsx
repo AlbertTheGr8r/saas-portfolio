@@ -7,6 +7,15 @@ import { Calendar } from 'lucide-react'
 function PostCard({ post }: { post: typeof posts[0] }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+      {post.coverImage && (
+        <div className="aspect-video w-full overflow-hidden">
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+      )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Calendar className="h-4 w-4" />
@@ -50,12 +59,8 @@ export default function BlogPage() {
   const featuredPosts = allPosts.filter((post) => post.featured)
   const regularPosts = allPosts.filter((post) => !post.featured)
 
-  // Ensure exactly 2 featured posts
   const displayFeatured = featuredPosts.slice(0, 2)
-  const remainingSlots = 2 - displayFeatured.length
-  const fillerPosts = regularPosts.slice(0, remainingSlots)
-  const allFeatured = [...displayFeatured, ...fillerPosts]
-  const remainingPosts = regularPosts.slice(remainingSlots)
+  const remainingPosts = [...displayFeatured, ...regularPosts]
 
   return (
     <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
@@ -67,14 +72,14 @@ export default function BlogPage() {
           </p>
         </header>
 
-        {allFeatured.length > 0 && (
+        {displayFeatured.length > 0 && (
           <section className="mb-16">
             <h2 className="mb-6 text-xl font-heading flex items-center gap-2">
               <span className="inline-block w-3 h-3 bg-main rounded-full"></span>
               Featured
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
-              {allFeatured.map((post) => (
+              {displayFeatured.map((post) => (
                 <PostCard key={post.slug} post={post} />
               ))}
             </div>

@@ -1,0 +1,22 @@
+{
+  "featured": [
+    {
+      "title": "An Analysis of Smart City Development Frameworks",
+      "date": "2025-10-07",
+      "excerpt": "A comprehensive analysis of smart city development frameworks published through the University of the Philippines Center for Integrative and Development Studies.",
+      "slug": "smart-city-development-frameworks"
+    },
+    {
+      "title": "Science Communications: Control Point Recovery and the Shift in Perspective",
+      "date": "2026-02-10",
+      "excerpt": "An invited talk on science communications and control point recovery presented to the Geodetic Engineers of the Philippines Region V, Naga City Chapter.",
+      "slug": "science-communications-control-point-recovery"
+    },
+    {
+      "title": "Modern Hydrography: High Precision, Higher Responsibility",
+      "date": "2026-03-06",
+      "excerpt": "Exploring the responsibilities of engineers as equipment once exclusive to corporations becomes accessible to individual practitioners in the era of accessible data.",
+      "slug": "modern-hydrography-high-precision-higher-responsibility"
+    }
+  ]
+}

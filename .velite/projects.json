@@ -1,9 +1,9 @@
 [
   {
-    "title": "SaaS Portfolio Template",
+    "title": "This site itself",
     "slug": "saas-portfolio",
-    "date": "2024-02-14T00:00:00.000Z",
-    "status": "completed",
+    "date": "2026-02-14T00:00:00.000Z",
+    "status": "ongoing",
     "excerpt": "A modern portfolio template built with Next.js, Tailwind CSS, and neobrutalism design.",
     "tags": [
       "nextjs",
@@ -20,10 +20,10 @@
       "TypeScript",
       "shadcn/ui"
     ],
-    "content": "# SaaS Portfolio Template\n\nA modern, responsive portfolio template designed with neobrutalism aesthetics.\n\n## Features\n\n- Next.js 14 with App Router\n- Tailwind CSS for styling\n- Dark mode support\n- Static export for GitHub Pages\n- Contentlayer for blog/projects\n- Neobrutalism design system\n\n## Tech Stack\n\nThis project uses modern web technologies:\n\n- **Next.js** - React framework\n- **Tailwind CSS** - Utility-first CSS\n- **TypeScript** - Type safety\n- **shadcn/ui** - Component library\n- **Contentlayer** - Content management\n\n## Development\n\n```bash\n# Install dependencies\npnpm install\n\n# Run dev server\npnpm dev\n\n# Build for production\npnpm build\n```\n\nThe project is optimized for static export and can be deployed to GitHub Pages or any static hosting provider.",
+    "content": "# SaaS Portfolio Template\r\n\r\nA modern, responsive portfolio template designed with neobrutalism aesthetics. The original template was lifted from [Neobrutalism Templates](https://github.com/neobrutalism-templates/saas). It's gone as of this writing, but I'm keeping it here for reference.\r\n\r\n## Features\r\n\r\n- Next.js 14 with App Router\r\n- Tailwind CSS for styling\r\n- Dark mode support\r\n- Static export for GitHub Pages\r\n- Contentlayer for blog/projects\r\n\r\n## Tech Stack\r\n\r\nI'm using this as a learning project to familiarize myself with modern web development. I'm also using it as a portfolio template for my own projects.\r\n\r\n- **Next.js** - React framework\r\n- **Tailwind CSS** - Utility-first CSS\r\n- **TypeScript** - Type safety\r\n- **shadcn/ui** - Component library\r\n- **Contentlayer** - Content management\r\n\r\n## Development\r\n\r\n```bash\r\n# Install dependencies\r\npnpm install\r\n\r\n# Run dev server\r\npnpm dev\r\n\r\n# Build for production\r\npnpm build\r\n```\r\n\r\nThe project is optimized for static export and can be deployed to GitHub Pages or any static hosting provider. If things go well, the push should run the build.",
     "metadata": {
       "readingTime": 1,
-      "wordCount": 98
+      "wordCount": 146
     },
     "url": "/projects/saas-portfolio"
   }

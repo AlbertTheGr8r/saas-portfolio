@@ -3,7 +3,7 @@ title: "Test post"
 date: "2026-02-14"
 excerpt: "This is my first blog post using Contentlayer and MDX. Learn about how I built this static site."
 tags: ["nextjs", "contentlayer", "mdx"]
-featured: true
+featured: false
 draft: false
 ---
 
