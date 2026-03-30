@@ -1,13 +1,22 @@
-import Link from 'next/link'
-import { compareDesc, format, parseISO } from 'date-fns'
 import { projects } from '.velite'
+import { compareDesc, format, parseISO } from 'date-fns'
+import { Calendar, ExternalLink, Github } from 'lucide-react'
+import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Github, Calendar } from 'lucide-react'
 
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+      {project.coverImage && (
+        <div className="aspect-video w-full overflow-hidden">
+          <img
+            src={project.coverImage}
+            alt={project.title}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">

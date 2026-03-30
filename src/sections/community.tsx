@@ -37,7 +37,7 @@ export default function Community() {
         <h2 className="mb-14 text-center text-2xl font-heading md:text-3xl lg:mb-20 lg:text-4xl">
           Featured
         </h2>
-        <div className="grid grid-cols-3 gap-4 lg:gap-8 w900:grid-cols-1 w900:gap-0">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {distributedFeatured.map((card, index) => (
             <div className="group flex flex-col justify-center" key={index}>
               {card.map(({ title, date, excerpt, slug }, index) => (

@@ -52,7 +52,7 @@ describe('Content Integrity Tests', () => {
 
         if (parsed.data.coverImage) {
           it('should have existing cover image', () => {
-            const imagePath = join(dirname(file), parsed.data.coverImage)
+            const imagePath = join(process.cwd(), 'public', parsed.data.coverImage)
             expect(existsSync(imagePath)).toBe(true)
           })
         }
@@ -135,7 +135,7 @@ describe('Content Integrity Tests', () => {
 
         if (parsed.data.coverImage) {
           it('should have existing cover image', () => {
-            const imagePath = join(dirname(file), parsed.data.coverImage)
+            const imagePath = join(process.cwd(), 'public', parsed.data.coverImage)
             expect(existsSync(imagePath)).toBe(true)
           })
         }
@@ -213,7 +213,7 @@ describe('Content Integrity Tests', () => {
             // Check if it's a valid internal link
             if (linkPath.startsWith('/blog/') || linkPath.startsWith('/projects/')) {
               // These will be validated at build time by Next.js
-              expect(linkPath).toMatch(/^\/(blog|projects)\/[a-z0-9-]+$/)
+              expect(linkPath).toMatch(/^\/(blog|projects)\/[a-z0-9-]+\/?$/)
             }
           }
         })

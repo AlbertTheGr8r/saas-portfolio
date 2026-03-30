@@ -19,7 +19,7 @@ export default function Features() {
                 key={i}
               >
                 <h4 className="text-xl font-heading">
-                  {project.title} {i + 1}
+                  {project.title}
                 </h4>
                 <p>{project.text}</p>
               </div>
