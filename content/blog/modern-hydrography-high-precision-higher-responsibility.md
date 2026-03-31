@@ -18,8 +18,6 @@ Access is no longer the barrier.
 
 Understanding is.
 
----
-
 ## Hydrography Is an Integration Problem
 
 Hydrography is often introduced as measuring depth. In practice, it is the integration of multiple systems that must agree with each other in space and time.
@@ -47,8 +45,6 @@ If any one of these is slightly off, the final output can be consistently, confi
 
 Modern hydrography is not just about collecting data. It is about making systems agree.
 
----
-
 ## The Work Has Shifted
 
 Technology has made fieldwork easier.
@@ -66,8 +62,6 @@ Processing, calibration, validation, and quality control now dominate the workfl
 
 Autonomy reduced operational difficulty.  
 It increased responsibility.
-
----
 
 ## Precision, Accuracy, and the Illusion of Mastery
 
@@ -93,8 +87,6 @@ A clean surface is not proof of accuracy.
 High data density is not proof of correctness.
 
 The responsibility of the engineer is to question outputs, not just produce them.
-
----
 
 ## Not All Anomalies Are Errors
 
@@ -122,8 +114,6 @@ The skill is knowing the difference.
 Some anomalies require recalibration.  
 Others require interpretation.
 
----
-
 ## Where Experience Shows
 
 As hydrography becomes more accessible, more practitioners are entering the field. This is a positive development.
@@ -149,8 +139,6 @@ It is subtly, systematically wrong data.
 
 The good news is that these are not barriers to entry. They are part of the learning curve. And that curve is easier to navigate when informed by those who have already encountered these issues.
 
----
-
 ## Every System, Every Deployment
 
 There is a tendency to think of hydrographic surveys as repeatable processes. In reality, each deployment is unique.
@@ -173,8 +161,6 @@ Two surveys that look identical on paper can behave very differently in practice
 
 Knowing your equipment is not just familiarity with operation. It is understanding how it behaves under varying conditions.
 
----
-
 ## Raising the Profession
 
 The accessibility of modern hydrographic tools is not a dilution of the profession. It is an expansion of it.
@@ -196,8 +182,6 @@ Modern hydrography benefits when engineers:
 - Validate rather than assume  
 - Question outputs rather than accept them  
 - Recognize the limits of their systems  
-
----
 
 ## Conclusion
 
