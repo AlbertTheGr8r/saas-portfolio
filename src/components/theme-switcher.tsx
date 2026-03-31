@@ -1,6 +1,6 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
+import { Moon, Sun, Monitor } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 import * as React from 'react'
@@ -9,18 +9,46 @@ import { Button } from '@/components/ui/button'
 
 export function ThemeSwitcher() {
   const { setTheme, theme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
 
-  return (
-    <>
-      <Button
-        size="icon"
-        className="fixed right-10 z-50"
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      >
-        <Sun className="stroke-text hidden h-8 w-8 w500:h-6 w500:w-6 dark:inline" strokeWidth={2.5} />
-        <Moon className="stroke-text inline h-8 w-8 w500:h-6 w500:w-6 dark:hidden" strokeWidth={2.5} />
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const cycleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark')
+    } else if (theme === 'dark') {
+      setTheme('system')
+    } else {
+      setTheme('light')
+    }
+  }
+
+  if (!mounted) {
+    return (
+      <Button size="icon" variant="noShadow" disabled>
         <span className="sr-only">Toggle theme</span>
       </Button>
-    </>
+    )
+  }
+
+  const getIcon = () => {
+    if (theme === 'system') {
+      return <Monitor className="h-5 w-5" strokeWidth={2.5} />
+    }
+    return (
+      <>
+        <Sun className="hidden dark:inline h-5 w-5" strokeWidth={2.5} />
+        <Moon className="inline dark:hidden h-5 w-5" strokeWidth={2.5} />
+      </>
+    )
+  }
+
+  return (
+    <Button size="icon" variant="default" onClick={cycleTheme}>
+      {getIcon()}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
   )
 }
