@@ -7,13 +7,13 @@ import { Button } from '@/components/ui/button'
 
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+    <article className="group relative flex w-full max-w-full flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
       {project.coverImage && (
-        <div className="aspect-video w-full overflow-hidden">
+        <div className="aspect-video w-full max-w-full overflow-hidden">
           <img
             src={project.coverImage}
             alt={project.title}
-            className="h-full w-full object-cover"
+            className="h-full w-full max-w-full object-cover"
           />
         </div>
       )}
@@ -31,7 +31,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
         </div>
         
         <h2 className="mt-3 text-xl font-heading">
-          <Link href={project.url}>
+          <Link href={project.url} className="hover:opacity-80 transition-opacity">
             <span className="absolute inset-0 z-0" aria-hidden="true" />
             {project.title}
           </Link>
@@ -83,7 +83,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
-      <div className="mx-auto max-w-6xl px-5 py-12 md:py-20">
+      <div className="mx-auto max-w-6xl md:w-container max-w-full px-5 py-12 md:py-20">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-heading">Projects</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">

@@ -81,6 +81,7 @@
   --animate-marquee2: marquee2 5s linear infinite;
 
   --spacing-container: 1300px;
+  --width-container: var(--spacing-container);
 
   @keyframes marquee {
     0% {
@@ -99,6 +100,11 @@
       transform: translateX(0%);
     }
   }
+}
+
+.w-container {
+  width: 100%;
+  max-width: var(--width-container);
 }
 
 @layer base {
@@ -140,6 +146,16 @@ html.dark .scrollbar {
 
 body::-webkit-scrollbar {
   width: 20px;
+}
+
+@media (max-width: 768px) {
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar {
+    width: 10px;
+  }
 }
 
 body::-webkit-scrollbar-track,
