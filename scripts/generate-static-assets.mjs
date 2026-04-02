@@ -14,6 +14,62 @@ const allProjects = JSON.parse(readFileSync(join(veliteDir, 'projects.json'), 'u
 const siteUrl = 'https://antiparity.net'
 const date = new Date()
 
+// Static pages to include in sitemap
+const staticPages = [
+  { path: '', priority: '1.0', changefreq: 'weekly' },
+  { path: '/blog', priority: '0.9', changefreq: 'weekly' },
+  { path: '/projects', priority: '0.9', changefreq: 'weekly' },
+  { path: '/about', priority: '0.8', changefreq: 'monthly' },
+  { path: '/contact', priority: '0.8', changefreq: 'monthly' },
+  { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+]
+
+function generateSitemap() {
+  const posts = allPosts
+    .filter((post) => !post.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+  const projects = allProjects
+    .filter((project) => !project.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+  const pages = staticPages.map(p => ({
+    loc: `${siteUrl}${p.path}`,
+    changefreq: p.changefreq,
+    priority: p.priority,
+    lastmod: date.toISOString().split('T')[0]
+  }))
+
+  const blogUrls = posts.map(post => ({
+    loc: `${siteUrl}${post.url}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+    lastmod: post.date
+  }))
+
+  const projectUrls = projects.map(project => ({
+    loc: `${siteUrl}${project.url}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+    lastmod: project.date
+  }))
+
+  const allUrls = [...pages, ...blogUrls, ...projectUrls]
+
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(url => `  <url>
+    <loc>${url.loc}</loc>
+    <lastmod>${url.lastmod}</lastmod>
+    <changefreq>${url.changefreq}</changefreq>
+    <priority>${url.priority}</priority>
+  </url>`).join('\n')}
+</urlset>`
+
+  writeFileSync('./public/sitemap.xml', sitemap)
+  console.log('Sitemap generated!')
+}
+
 // Generate RSS Feed
 const feed = new Feed({
   title: "Albert's Blog",
@@ -98,3 +154,17 @@ const index = {
 
 writeFileSync('./public/content-index.json', JSON.stringify(index, null, 2))
 console.log('Content index generated!')
+
+// Generate Robots.txt
+function generateRobots() {
+  const robots = `User-agent: *
+Allow: /
+Sitemap: ${siteUrl}/sitemap.xml
+`
+  writeFileSync('./public/robots.txt', robots)
+  console.log('Robots.txt generated!')
+}
+
+generateSitemap()
+generateRobots()
+console.log('All static assets generated!')

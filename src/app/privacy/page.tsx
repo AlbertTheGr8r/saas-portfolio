@@ -1,7 +1,7 @@
 export default function PrivacyPolicy() {
   return (
     <main className="mx-auto max-w-3xl px-5 py-16">
-      <h1 className="mb-8 font-heading text-4xl font-bold">Privacy Policy</h1>
+      <h1 className="mt-8 mb-8 font-heading text-4xl font-bold">Privacy Policy</h1>
       
       <div className="space-y-6 text-lg">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
