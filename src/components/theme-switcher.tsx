@@ -27,9 +27,9 @@ export function ThemeSwitcher() {
 
   if (!mounted) {
     return (
-      <Button size="icon" variant="noShadow" disabled>
+      <span className="size-10 inline-flex items-center justify-center">
         <span className="sr-only">Toggle theme</span>
-      </Button>
+      </span>
     )
   }
 
