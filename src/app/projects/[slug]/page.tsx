@@ -33,8 +33,37 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3)
 
+  const projectLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: project.title,
+    description: project.excerpt,
+    image: project.coverImage,
+    datePublished: project.date,
+    dateModified: project.updated,
+    author: {
+      '@type': 'Person',
+      name: 'Albert Florin',
+      url: 'https://antiparity.net',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Albert Florin',
+      url: 'https://antiparity.net',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': project.url,
+    },
+  }
+
   return (
-    <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectLd) }}
+      />
+      <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
       <div className="mx-auto max-w-6xl px-5 py-12 md:py-20">
 
         {/* HERO */}
@@ -194,5 +223,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       </div>
     </article>
+    </>
   )
 }

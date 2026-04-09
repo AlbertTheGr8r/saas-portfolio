@@ -35,9 +35,9 @@ function extractH2Headings(content: string): { id: string; text: string }[] {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
   
-  // Sort posts by date for navigation
+  // Sort posts by date for navigation (exclude future posts)
   const sortedPosts = [...posts]
-    .filter((p) => !p.draft)
+    .filter((p) => !p.draft && new Date(p.date) <= new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   
   const postIndex = sortedPosts.findIndex((p) => p.slug === slug)
@@ -65,9 +65,38 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     />
   )
 
+  const blogPostLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.coverImage,
+    datePublished: post.date,
+    dateModified: post.updated,
+    author: {
+      '@type': 'Person',
+      name: 'Albert Florin',
+      url: 'https://antiparity.net',
+    },
+    publisher: {
+      '@type': 'Person',
+      name: 'Albert Florin',
+      url: 'https://antiparity.net',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': post.url,
+    },
+  }
+
   if (useStructuredLayout) {
     return (
-      <StructuredEditorialLayout
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostLd) }}
+        />
+        <StructuredEditorialLayout
         title={post.title}
         date={post.date}
         updated={post.updated}
@@ -79,11 +108,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       >
         <MDXContent source={post.content} />
       </StructuredEditorialLayout>
+      </>
     )
   }
 
   return (
-    <EditorialLayout
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostLd) }}
+      />
+      <EditorialLayout
       title={post.title}
       date={post.date}
       updated={post.updated}
@@ -93,6 +128,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       footer={postNavigation}
     >
       <MDXContent source={post.content} />
-    </EditorialLayout>
+      </EditorialLayout>
+    </>
   )
 }

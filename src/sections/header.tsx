@@ -11,7 +11,7 @@ export default function Header() {
           Albert Florin
         </h1>
         <p className="my-12 mt-8 text-lg font-normal leading-relaxed md:text-xl lg:text-2xl lg:leading-relaxed">
-          Where passion meets skill.
+          Geospatial engineering and system design.
         </p>
         <Links />
         <Button

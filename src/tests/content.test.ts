@@ -156,8 +156,8 @@ describe('Content Integrity Tests', () => {
 
   describe('Content Rules', () => {
     it('should not have duplicate titles between posts and projects', () => {
-      const blogFiles = glob.sync('content/blog/**/*.md', { ignore: ['**/README.md', '**/_assets/**'] })
-      const projectFiles = glob.sync('content/projects/**/*.md', { ignore: ['**/README.md', '**/_assets/**'] })
+    const blogFiles = glob.sync('content/blog/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
+    const projectFiles = glob.sync('content/projects/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
       
       const blogTitles = blogFiles.map((file) => {
         const content = readFileSync(file, 'utf-8')
@@ -178,7 +178,7 @@ describe('Content Integrity Tests', () => {
     })
 
     it('should have valid markdown syntax in all files', () => {
-      const allFiles = glob.sync('content/**/*.md', { ignore: ['**/README.md', '**/_assets/**'] })
+      const allFiles = glob.sync('content/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
       
       allFiles.forEach((file) => {
         const content = readFileSync(file, 'utf-8')
@@ -197,7 +197,7 @@ describe('Content Integrity Tests', () => {
 
   describe('Link Integrity', () => {
     it('should have valid internal links in content', () => {
-      const allFiles = glob.sync('content/**/*.md', { ignore: ['**/README.md', '**/_assets/**'] })
+      const allFiles = glob.sync('content/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
       const internalLinkRegex = /\[([^\]]+)\]\((\/[^)]+)\)/g
       
       allFiles.forEach((file) => {

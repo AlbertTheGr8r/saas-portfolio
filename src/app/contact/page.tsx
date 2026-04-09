@@ -16,7 +16,7 @@ export default function ContactPage() {
           <section>
             <h2 className="mb-6 text-2xl font-heading">Email</h2>
             <Button size="lg" asChild>
-              <a href="mailto:AlbertFlorin93@gmail.com">
+              <a href="mailto:albert@antiparity.net">
                 <Mail className="mr-2 h-5 w-5" />
                 albert@antiparity.net
               </a>

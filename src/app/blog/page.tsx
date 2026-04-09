@@ -54,6 +54,7 @@ function PostCard({ post }: { post: typeof posts[0] }) {
 export default function BlogPage() {
   const allPosts = posts
     .filter((post) => !post.draft && !post.archived)
+    .filter((post) => new Date(post.date) <= new Date())
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   const featuredPosts = allPosts.filter((post) => post.featured)
