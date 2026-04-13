@@ -1,54 +1,70 @@
 ---
-title: "Test post"
+title: "On Building a Space to Think"
 date: "2026-02-14"
-excerpt: "This is my first blog post using Contentlayer and MDX. Learn about how I built this static site."
-tags: ["nextjs", "contentlayer", "mdx"]
-featured: false
+updated: "2026-04-11"
+excerpt: "An introduction to a neo-brutalist blog for thoughts, systems, and works in progress."
+tags: ["blog", "neobrutalism", "projects", "writing"]
+featured: true
 draft: false
+coverImage: "/static/think.jpg"
 ---
 
-# Welcome to My Blog
+# On Building a Space to Think
 
-This is my first blog post using **Contentlayer** and **MDX** to build a fully static site. No backend required since that's what a static site is.
+This is not a blog in the traditional sense.
 
-## Why Static?
+There is no expectation here of polish, of consistency, or even of conclusion. This is a working space. A place to think in public, to leave traces of ideas mid-formation, and to document things as they are being built rather than after they are complete.
 
-Static sites are:
-- Fast (pre-rendered HTML)
-- Secure (no server to hack)
-- Cheap to host (GitHub Pages is free)
-- Easy to version control (everything is in git)
+The structure is simple. There are two main areas: **Blog** and **Projects**.
 
-## Code Example
+The distinction matters.
 
-Here's some TypeScript code:
+## The Blog
 
-```typescript
-function greet(name: string): string {
-  return `Hello, ${name}!`
-}
+The blog is where thoughts go.
 
-console.log(greet('World'))
-```
+Some will be technical—like hydrography, systems, or design decisions. Others may be fragments: observations, questions, or attempts at explaining something that does not yet fully make sense.
 
-Seeing color? Eyy, welcome from the future. As of posting it's not yet implemented.
+These are not meant to be definitive. They are not tutorials, nor are they guides written with an audience in mind. They are closer to notes that happen to be readable.
 
-## Lists
+If something here feels unfinished, it probably is.
 
-Here's what I'm using:
+## The Projects
 
-- Next.js 14 with App Router
-- Contentlayer for content management
-- MDX for rich content
-- Tailwind CSS for styling
-- [Neobrutalism design system](https://www.neobrutalism.dev/)
+The projects section is different. It is where things are made concrete.
 
-## Links
+Right now, most of them are programming-related—systems, tools, experiments. Over time, that scope will expand. Writing, for instance, belongs here when it becomes a constructed piece rather than a passing thought.
 
-Another aspect of this project is [projects](/projects), or go back [home](/).
+This separation is intentional.
 
-## Blockquote
+Creative writing is not blogging. It operates under different constraints, different intentions. A short story or a structured piece demands cohesion and form. A blog entry does not. Mixing the two collapses that distinction and weakens both.
 
-> "Integration. Integration. Integration."
+So they remain separate.
 
-Thanks for the time.
+## Why This Exists
+
+There is a tendency to only show finished work. Clean outputs, refined ideas, resolved conclusions.
+
+This space rejects that.
+
+What matters here is the process: the iterations, the false starts, the partial understandings. The things that would normally be discarded or left undocumented.
+
+A static site is a fitting medium for this. It is minimal, versioned, and direct. Each entry is a snapshot—fixed at the moment it was written, but always sitting within a larger, evolving system.
+
+## On Form
+
+The design follows a neo-brutalist approach for a reason.
+
+It is direct. It does not attempt to hide structure behind decoration. Interaction is explicit. Content is surfaced without unnecessary framing.
+
+This is aligned with the purpose of the site itself: reduce friction between thought and expression.
+
+## Moving Forward
+
+There is no strict roadmap for what appears here.
+
+Some entries will be dense and technical. Others may be brief. Projects will come and go, expand or remain unfinished. That is expected.
+
+What matters is that this space remains usable—as a place to think, to document, and to build.
+
+Nothing more is required.

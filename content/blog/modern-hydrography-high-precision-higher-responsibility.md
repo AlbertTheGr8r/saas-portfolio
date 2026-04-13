@@ -1,5 +1,5 @@
 ---
-title: "Modern Hydrography: High Precision, Higher Responsibility v1"
+title: "Modern Hydrography: High Precision, Higher Responsibility"
 date: "2026-03-06"
 updated: "2026-04-11"
 excerpt: "Hydrography is no longer limited by access to equipment, but by how well engineers understand and integrate the systems behind the data."

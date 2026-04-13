@@ -4,6 +4,7 @@ import { EditorialLayout } from '@/components/layouts/editorial-layout'
 import { StructuredEditorialLayout } from '@/components/layouts/structured-editorial-layout'
 import { PostNavigation } from '@/components/post-navigation'
 import { MDXContent } from '@/components/mdx-content'
+import { extractVersionInfo } from '@/lib/versions'
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -58,6 +59,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Decide layout based on H2 count (threshold: 3)
   const useStructuredLayout = h2Count >= 3
 
+  // Extract version info for the article
+  const versions = extractVersionInfo(posts, slug)
+
   const postNavigation = (
     <PostNavigation
       previousPost={previousPost}
@@ -89,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
   }
 
-  if (useStructuredLayout) {
+if (useStructuredLayout) {
     return (
       <>
         <script
@@ -97,17 +101,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostLd) }}
         />
         <StructuredEditorialLayout
-        title={post.title}
-        date={post.date}
-        updated={post.updated}
-        excerpt={post.excerpt}
-        tags={post.tags}
-        url={post.url}
-        tocItems={h2Headings}
-        footer={postNavigation}
-      >
-        <MDXContent source={post.content} />
-      </StructuredEditorialLayout>
+          title={post.title}
+          date={post.date}
+          updated={post.updated}
+          excerpt={post.excerpt}
+          tags={post.tags}
+          url={post.url}
+          versions={versions}
+          tocItems={h2Headings}
+          footer={postNavigation}
+        >
+          <MDXContent source={post.content} />
+        </StructuredEditorialLayout>
       </>
     )
   }
@@ -119,15 +124,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostLd) }}
       />
       <EditorialLayout
-      title={post.title}
-      date={post.date}
-      updated={post.updated}
-      excerpt={post.excerpt}
-      tags={post.tags}
-      url={post.url}
-      footer={postNavigation}
-    >
-      <MDXContent source={post.content} />
+        title={post.title}
+        date={post.date}
+        updated={post.updated}
+        excerpt={post.excerpt}
+        tags={post.tags}
+        url={post.url}
+        versions={versions}
+        footer={postNavigation}
+      >
+        <MDXContent source={post.content} />
       </EditorialLayout>
     </>
   )

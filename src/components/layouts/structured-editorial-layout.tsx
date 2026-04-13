@@ -6,6 +6,8 @@ import { ShareButtons } from '@/components/share-buttons'
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import { useActiveHeading } from '@/hooks/use-active-heading'
+import Link from 'next/link'
+import type { VersionInfo } from '@/lib/versions'
 
 interface TOCItem {
   id: string
@@ -60,6 +62,7 @@ interface StructuredEditorialLayoutProps {
   excerpt?: string
   tags: string[]
   url: string
+  versions?: VersionInfo[]
   tocItems: TOCItem[]
   children: ReactNode
   footer?: ReactNode
@@ -72,6 +75,7 @@ export function StructuredEditorialLayout({
   excerpt,
   tags,
   url,
+  versions,
   tocItems,
   children,
   footer,
@@ -88,9 +92,29 @@ export function StructuredEditorialLayout({
               {format(parseISO(date), 'MMMM d, yyyy')}
             </time>
             {updated && (
-              <span> · Updated {format(parseISO(updated), 'MMMM d, yyyy')}</span>
+              <>
+                {' · Updated '}
+                <time dateTime={updated}>
+                  {format(parseISO(updated), 'MMMM d, yyyy')}
+                </time>
+              </>
             )}
           </div>
+
+          {versions && versions.length > 0 && (
+            <div className="flex items-center gap-2 mb-4">
+              {versions.map((v) => (
+                <Link key={v.slug} href={v.url}>
+                  <Badge
+                    variant={v.isCurrent ? 'default' : 'neutral'}
+                    className="cursor-pointer hover:opacity-80 text-xs"
+                  >
+                    {v.versionLabel}
+                  </Badge>
+                </Link>
+              ))}
+            </div>
+          )}
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-tight">
             {title}

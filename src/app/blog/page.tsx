@@ -3,6 +3,7 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Calendar } from 'lucide-react'
+import { filterNonVersionedPosts } from '@/lib/versions'
 
 function PostCard({ post }: { post: typeof posts[0] }) {
   return (
@@ -22,6 +23,11 @@ function PostCard({ post }: { post: typeof posts[0] }) {
           <time dateTime={post.date}>
             {format(parseISO(post.date), 'MMM d, yyyy')}
           </time>
+          {post.updated && (
+            <span className="text-xs text-muted-foreground/60">
+              (Updated {format(parseISO(post.updated), 'MMM d, yyyy')})
+            </span>
+          )}
         </div>
         
         <h2 className="mt-3 text-xl font-heading">
@@ -52,7 +58,9 @@ function PostCard({ post }: { post: typeof posts[0] }) {
 }
 
 export default function BlogPage() {
-  const allPosts = posts
+  const visiblePosts = filterNonVersionedPosts(posts)
+
+  const allPosts = visiblePosts
     .filter((post) => !post.draft && !post.archived)
     .filter((post) => new Date(post.date) <= new Date())
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
@@ -61,7 +69,6 @@ export default function BlogPage() {
   const regularPosts = allPosts.filter((post) => !post.featured)
 
   const displayFeatured = featuredPosts.slice(0, 2)
-  const remainingPosts = [...displayFeatured, ...regularPosts]
 
   return (
     <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
@@ -87,11 +94,11 @@ export default function BlogPage() {
           </section>
         )}
 
-        {remainingPosts.length > 0 && (
+        {allPosts.length > 0 && (
           <section>
             <h2 className="mb-6 text-xl font-heading">All Posts</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {remainingPosts.map((post) => (
+              {allPosts.map((post) => (
                 <PostCard key={post.slug} post={post} />
               ))}
             </div>
