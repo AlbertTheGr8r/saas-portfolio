@@ -35,13 +35,13 @@ In Project SMART METRO, we stripped the model down to two essentials: **Command*
 
 **Command** is about internal coherence. Local governments usually operate in the chaos, split across different offices and fragmented reporting structures. The role of Command is to consolidate that data so coordinated action is actually possible. However, visibility won't cut it alone. A command center can have a wall of screens showing all the relevant data yet still fail if the underlying processes are slow or broken.
 
-**Connect** is where the citizen meets the system. Most services already exist, but they are buried under unclear instructions, fragmented channels, and procedural overload. This is where the friction is felt. A system can be perfectly optimized on the inside and still be a total failure on the outside. Connect isn't just a "feature"—it’s the part that foundation that legitimizes a government.
+**Connect** is where the citizen meets the system. Most services already exist, but they are buried under unclear instructions, fragmented channels, and procedural overload. This is where the friction is felt. A system can be perfectly optimized on the inside and still be a total failure on the outside. This way, Connect isn't just a feature but a foundational layer upon which public trust is built.
 
 ## The Metro is the System
 
 A city limit is a convenient legal boundary, but it isn't a physical one. Traffic doesn't stop at the border. Floodwaters don't check jurisdictions. Economic life flows across administrative lines.
 
-Despite this, most smart city projects stay trapped within their own fences. This creates a mismatch between the system being modeled and the one being managed. If a city optimizes its own traffic lights while the neighboring town stays in gridlock, it hasn't solved anything. It just moved the bottleneck three kilometers down the road which at worst eventually creeps back in to your city.
+Despite this, most smart city projects stay trapped within their own fences. This creates a mismatch between the system being modeled and the one being managed. If a city optimizes its own traffic lights while the neighboring town stays in gridlock, it hasn't solved anything. It just moved the bottleneck three kilometers down the road, where it inevitably crawls back into your own jurisdiction.
 
 Project SMART METRO treated the region as a shared environment. It’s harder to coordinate, but it’s more honest. A city optimized in isolation can still fail as part of a region. We don't just need smart cities; we need smart regions.
 
