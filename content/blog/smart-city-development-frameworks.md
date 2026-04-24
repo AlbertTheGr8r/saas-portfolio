@@ -3,7 +3,7 @@ title: "An Analysis of Smart City Development Frameworks"
 date: "2025-10-07"
 updated: "2026-04-15"
 excerpt: "A comprehensive analysis of smart city development frameworks published through the University of the Philippines Center for Integrative and Development Studies."
-tags: ["smart-city", "urban-development", "research", "project-smart-metro"]
+tags: ["infrastructure", "governance", "systems-thinking", "community"]
 featured: false
 draft: false
 coverImage: "/static/smart-city.jpg"

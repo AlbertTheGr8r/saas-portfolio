@@ -3,7 +3,7 @@ title: "On Building a Space to Think"
 date: "2026-02-14"
 updated: "2026-04-11"
 excerpt: "An introduction to a neo-brutalist blog for thoughts, systems, and works in progress."
-tags: ["blog", "neobrutalism", "projects", "writing"]
+tags: ["methodology"]
 featured: true
 draft: false
 coverImage: "/static/think.jpg"

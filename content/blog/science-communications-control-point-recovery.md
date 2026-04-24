@@ -2,7 +2,7 @@
 title: "Science Communications: Control Point Recovery and the Shift in Perspective"
 date: "2026-02-10"
 excerpt: "An invited talk on science communications and control point recovery presented to the Geodetic Engineers of the Philippines Region V, Naga City Chapter."
-tags: ["science-communications", "geodesy", "control-point", "mapping"]
+tags: ["engineering", "data", "community", "methodology"]
 featured: true
 draft: false
 coverImage: "/static/science-comms.jpg"

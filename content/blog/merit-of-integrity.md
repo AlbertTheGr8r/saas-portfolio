@@ -2,7 +2,7 @@
 title: "The Merit of Integrity: Bridging Experience and Innovation on Unstable Ground"
 date: "2026-06-09"
 excerpt: "Civil engineering does not simply deal with construction. Integral to the profession is the coordination between architects, fellow engineers, contractors, suppliers, businessmen, and the government. Integrity in Civil Engineering isn't just a moral choice—it's a survival strategy. This essay explores the heart of construction projects, where money and manpower act as the lifeblood, and the professional's integrity acts as the defense preventing systemic collapse."
-tags: ["civil-engineering", "professional-development", "ethics", "project-management", "sustainability"]
+tags: ["engineering", "responsibility", "systems-thinking", "governance"]
 featured: false
 draft: false
 ---
