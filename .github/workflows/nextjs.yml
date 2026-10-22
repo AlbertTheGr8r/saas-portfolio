@@ -52,8 +52,9 @@ jobs:
       - name: Purge Cloudflare Cache
         uses: cssnr/cf-purge-cache-action@v2
         with:
+          # v2 takes a `zones` list of zone names; with no files/tags/hosts
+          # filters it purges everything. `domains`, `zone` and `args` were
+          # removed in the v1 -> v2 bump.
           token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          domains: antiparity.net
-          zone: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-          args: '{"purge_everything":true}'
+          zones: antiparity.net
 
