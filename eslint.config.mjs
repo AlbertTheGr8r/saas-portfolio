@@ -11,6 +11,10 @@ const compat = new FlatCompat({
 
 /** @type {import('eslint').Linter.Config[]} */
 const eslintConfig = [
+  {
+    // Build output and generated content are not source files.
+    ignores: ['.next/**', 'out/**', '.velite/**', 'test-results/**', 'playwright-report/**'],
+  },
   ...compat.extends('next/core-web-vitals', 'prettier'),
   {
     rules: {

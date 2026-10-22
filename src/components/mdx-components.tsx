@@ -125,7 +125,6 @@ export const mdxComponents = {
     />
   ),
   img: ({ className, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
     <img
       className={cn('rounded-base border-2 border-border', className)}
       alt={alt}
