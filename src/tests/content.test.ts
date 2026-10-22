@@ -156,8 +156,13 @@ describe('Content Integrity Tests', () => {
 
   describe('Content Rules', () => {
     it('should not have duplicate titles between posts and projects', () => {
-    const blogFiles = glob.sync('content/blog/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
-    const projectFiles = glob.sync('content/projects/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
+      // Versioned posts (e.g. `article.v1.md`) intentionally share the title of
+      // the post they version; the UI groups them as Current/v1 variants via
+      // src/lib/versions.ts, so only unique articles should be compared here.
+      const blogFiles = glob
+        .sync('content/blog/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
+        .filter((file) => !/\.v\d+\.md$/.test(file))
+      const projectFiles = glob.sync('content/projects/**/*.md', { ignore: ['**/README.md', '**/_assets/**', '**/*_template.md'] })
       
       const blogTitles = blogFiles.map((file) => {
         const content = readFileSync(file, 'utf-8')
