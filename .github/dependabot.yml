@@ -1,0 +1,47 @@
+version: 2
+updates:
+  # JavaScript/TypeScript dependencies (package.json + pnpm-lock.yaml)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "06:00"
+      timezone: "Asia/Manila"
+    open-pull-requests-limit: 5
+    versioning-strategy: "increase-if-necessary"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"
+    groups:
+      # One PR for everything with a security fix (added the moment an
+      # advisory is published — this is NOT tied to the monthly schedule).
+      security:
+        applies-to: "security-updates"
+        patterns: ["*"]
+        labels: ["dependencies", "security"]
+      # Routine minor + patch bumps, auto-merged after CI passes.
+      minor-patch:
+        applies-to: "version-updates"
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+        labels: ["dependencies", "minor-patch"]
+      # Major bumps land in their own PR and are never auto-merged.
+      major:
+        applies-to: "version-updates"
+        patterns: ["*"]
+        update-types: ["major"]
+        labels: ["dependencies", "major"]
+
+  # Keep GitHub Actions pinned versions fresh (checkout, setup-node, etc.)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      time: "06:00"
+      timezone: "Asia/Manila"
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns: ["*"]
