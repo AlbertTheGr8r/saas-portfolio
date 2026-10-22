@@ -44,9 +44,14 @@ jobs:
   auto-merge:
     name: Auto-merge minor and patch updates
     needs: build-and-test
+    # Dependabot applies the `minor`/`patch` SemVer labels to single-dependency
+    # PRs (the labels exist in the repo). Grouped PRs carry no SemVer label, so
+    # fall back to the group identifier in the branch name.
     if: >
       github.event.pull_request.user.login == 'dependabot[bot]' &&
-      contains(github.event.pull_request.labels.*.name, 'minor-patch')
+      (contains(github.event.pull_request.labels.*.name, 'minor') ||
+       contains(github.event.pull_request.labels.*.name, 'patch') ||
+       contains(github.head_ref, 'minor-patch'))
     runs-on: ubuntu-latest
     permissions:
       contents: write
