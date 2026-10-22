@@ -16,19 +16,19 @@ export default function AboutPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-heading mb-4">Identity</h2>
             <p className="text-lg text-muted-foreground">
-              I'm Albert Florin. Developer. Geodetic Engineer.
+              I&rsquo;m Albert Florin. Developer. Geodetic Engineer.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-heading mb-4">Function</h2>
             <p className="text-muted-foreground mb-4">
-              I build things. Sometimes they're prose, sometimes they're technical 
+              I build things. Sometimes they&rsquo;re prose, sometimes they&rsquo;re technical 
               solutions. I still learning clean code, exploratory interfaces, and the 
               occasional deep-dive.
             </p>
             <p className="text-muted-foreground mb-4">
-              This site is a collection of my projects and thoughts. It's intentionally 
+              This site is a collection of my projects and thoughts. It&rsquo;s intentionally 
               simple, just content. A return to what the web used to be: 
               a personal space on the internet.
             </p>
@@ -42,7 +42,7 @@ export default function AboutPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-heading mb-4">Contact</h2>
             <p className="text-muted-foreground mb-6">
-              Want to say hi? Here's where you can reach me.
+              Want to say hi? Here&rsquo;s where you can reach me.
             </p>
             
             <div className="grid gap-4 sm:grid-cols-2">
@@ -78,8 +78,8 @@ export default function AboutPage() {
             <h2 className="text-2xl font-heading mb-4">System</h2>
             <p className="text-muted-foreground">
               This is a static site built with Next.js. No database, no tracking, 
-              no complex frameworks. Just content delivered as HTML. If you're curious 
-              about the tech stack or want to see the code, it's all available on GitHub.
+              no complex frameworks. Just content delivered as HTML. If you&rsquo;re curious 
+              about the tech stack or want to see the code, it&rsquo;s all available on GitHub.
             </p>
           </section>
         </div>
