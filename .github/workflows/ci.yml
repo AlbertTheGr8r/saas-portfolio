@@ -58,7 +58,13 @@ jobs:
       pull-requests: write
     steps:
       - name: Squash-merge
-        run: gh pr merge --squash --delete-branch "$PR_URL"
+        # If the branch is stale (Dependabot PRs all touch pnpm-lock.yaml, so
+        # concurrent merges conflict easily), ask Dependabot to rebase instead
+        # of leaving a red run. The rebase triggers CI again, then this job
+        # retries the merge.
+        run: |
+          gh pr merge --squash --delete-branch "$PR_URL" ||
+            gh pr comment "$PR_URL" --body "@dependabot rebase"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
