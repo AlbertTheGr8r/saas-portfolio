@@ -8,30 +8,26 @@ updates:
       time: "06:00"
       timezone: "Asia/Manila"
     open-pull-requests-limit: 5
-    versioning-strategy: "increase-if-necessary"
+    # "increase" (not increase-if-necessary) so patch releases inside a `^`
+    # range also refresh pnpm-lock.yaml. Most of this repo's alerts are on
+    # transitive deps, which only move when the lockfile is regenerated.
+    versioning-strategy: "increase"
     commit-message:
       prefix: "deps"
       prefix-development: "deps-dev"
       include: "scope"
     groups:
-      # One PR for everything with a security fix (added the moment an
-      # advisory is published — this is NOT tied to the monthly schedule).
-      security:
-        applies-to: "security-updates"
-        patterns: ["*"]
-        labels: ["dependencies", "security"]
       # Routine minor + patch bumps, auto-merged after CI passes.
       minor-patch:
-        applies-to: "version-updates"
         patterns: ["*"]
         update-types: ["minor", "patch"]
-        labels: ["dependencies", "minor-patch"]
       # Major bumps land in their own PR and are never auto-merged.
       major:
-        applies-to: "version-updates"
         patterns: ["*"]
         update-types: ["major"]
-        labels: ["dependencies", "major"]
+    # Security updates are intentionally left ungrouped: one unfixable
+    # transitive dep (e.g. @vitest/mocker) would otherwise block the whole
+    # group, and individual PRs get SemVer labels the auto-merge job can use.
 
   # Keep GitHub Actions pinned versions fresh (checkout, setup-node, etc.)
   - package-ecosystem: "github-actions"
