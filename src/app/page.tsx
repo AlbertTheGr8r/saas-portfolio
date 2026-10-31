@@ -46,21 +46,18 @@ export default function Home() {
   return (
     <>
       <section className="border-b-2 border-border bg-secondary-background bg-[linear-gradient(to_right,#80808033_1px,transparent_1px),linear-gradient(to_bottom,#80808033_1px,transparent_1px)] bg-[size:70px_70px]">
-        <div className="mx-auto w-container max-w-full px-5 py-16 md:py-24">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            AntiParity
-          </p>
-          <h1 className="mt-4 text-5xl font-heading leading-none md:text-7xl">
-            antiparity.net
+        <div className="mx-auto flex min-h-[100dvh] w-container max-w-full flex-col items-center justify-center px-5 py-[110px] text-center lg:py-[150px]">
+          <h1 className="text-3xl font-heading md:text-4xl lg:text-5xl">
+            Albert Florin
           </h1>
-          <p className="mt-6 max-w-2xl text-xl leading-relaxed md:text-2xl">
-            Albert Florin — geodetic engineer and developer in Metro Manila.
+          <p className="my-12 mt-8 text-lg font-normal leading-relaxed md:text-xl lg:text-2xl lg:leading-relaxed">
+            Geospatial engineering and system design.
           </p>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
+          <p className="mx-auto mt-2 max-w-2xl text-base text-muted-foreground md:text-lg">
             Essays, field notes, and case studies on geospatial systems,
             infrastructure, and the tools we use to think.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button asChild>
               <Link href="/blog">Read the writing</Link>
             </Button>
@@ -79,6 +76,9 @@ export default function Home() {
                 GitHub
               </a>
             </Button>
+            <Button variant="neutral" asChild>
+              <a href="mailto:albertflorin93@gmail.com">Email</a>
+            </Button>
           </div>
         </div>
       </section>
@@ -88,12 +88,9 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <h2 className="text-3xl font-heading md:text-4xl">Latest writing</h2>
-              <p className="mt-2 text-muted-foreground">
-                Essays, field notes, and case studies.
-              </p>
             </div>
             <Link href="/blog" className="font-heading underline underline-offset-4">
-              All writing →
+              More →
             </Link>
           </div>
 
@@ -125,13 +122,13 @@ export default function Home() {
         <div className="mx-auto w-container max-w-full px-5">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
-              <h2 className="text-3xl font-heading md:text-4xl">Projects</h2>
+              <h2 className="text-3xl font-heading md:text-4xl">Studies</h2>
               <p className="mt-2 text-muted-foreground">
                 Case studies on things built and shipped.
               </p>
             </div>
             <Link href="/projects" className="font-heading underline underline-offset-4">
-              All projects →
+              More →
             </Link>
           </div>
 
@@ -157,7 +154,7 @@ export default function Home() {
                   </p>
                 )}
                 <span className="mt-auto pt-6 font-heading text-sm underline underline-offset-4">
-                  View case study →
+                  View study →
                 </span>
               </Link>
             ))}

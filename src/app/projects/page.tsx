@@ -7,8 +7,8 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Case studies and working projects in geospatial engineering, mapping, and software.',
+  title: 'Studies',
+  description: 'Case studies on geospatial engineering, mapping, and software.',
   alternates: { canonical: '/projects' },
 }
 
@@ -92,9 +92,9 @@ export default function ProjectsPage() {
     <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
       <div className="mx-auto max-w-6xl md:w-container max-w-full px-5 py-12 md:py-20">
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-heading">Projects</h1>
+          <h1 className="text-4xl md:text-5xl font-heading">Studies</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-            A collection of things I&apos;ve built.
+            Case studies on things built and shipped.
           </p>
         </header>
 
@@ -106,7 +106,7 @@ export default function ProjectsPage() {
           </div>
         ) : (
           <div className="rounded-base border-2 border-border bg-secondary-background p-12 text-center dark:border-darkBorder">
-            <p className="text-muted-foreground">No projects yet. Check back soon!</p>
+            <p className="text-muted-foreground">No studies yet. Check back soon!</p>
           </div>
         )}
       </div>

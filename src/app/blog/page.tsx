@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 function PostCard({ post }: { post: typeof posts[0] }) {
   return (
-    <article className="group relative flex w-full max-w-full flex-col overflow-hidden rounded-base border-2 border-border bg-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+    <article className="group relative flex w-full max-w-full flex-col overflow-hidden rounded-base border-2 border-border bg-secondary-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow">
       {post.coverImage && (
         <div className="aspect-video w-full max-w-full overflow-hidden">
           <img
@@ -73,10 +73,10 @@ function PostCard({ post }: { post: typeof posts[0] }) {
         <div className="mt-auto relative z-10 pt-6">
           <Link
             href={post.url}
-            aria-label={`Read more: ${post.title}`}
+            aria-label={`Continue reading: ${post.title}`}
             className="font-heading text-sm underline underline-offset-4"
           >
-            Read more →
+            Continue →
           </Link>
         </div>
       </div>

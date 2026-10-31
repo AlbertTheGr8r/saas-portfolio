@@ -20,7 +20,7 @@ export function ArticleCard({
   readingTime,
 }: ArticleCardProps) {
   return (
-    <article className="group flex h-full flex-col rounded-base border-2 border-border bg-background p-6 shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow">
+    <article className="group flex h-full flex-col rounded-base border-2 border-border bg-secondary-background p-6 shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow">
       <div className="flex items-center justify-between gap-3 text-xs text-muted-foreground">
         <time dateTime={date}>{format(parseISO(date), 'MMM d, yyyy')}</time>
         <span>{readingTime} min read</span>
@@ -51,10 +51,10 @@ export function ArticleCard({
       <div className="mt-auto pt-6">
         <Link
           href={url}
-          aria-label={`Read more: ${title}`}
+          aria-label={`Continue reading: ${title}`}
           className="font-heading text-sm underline underline-offset-4"
         >
-          Read more →
+          Continue →
         </Link>
       </div>
     </article>

@@ -138,10 +138,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <aside className="lg:col-span-4 lg:sticky lg:top-24 h-fit">
             <div className="rounded-2xl border-2 border-border bg-background p-6 space-y-8 dark:border-darkBorder">
               
-              {/* Project Info */}
+              {/* Study Info */}
               <div>
                 <h3 className="text-xs uppercase tracking-wide text-muted-foreground mb-4 font-heading">
-                  Project Info
+                  Study Info
                 </h3>
 
                 <div className="space-y-3 text-sm">
@@ -206,7 +206,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         {relatedProjects.length > 0 && (
           <section className="mt-32 pt-20 border-t-2 border-border dark:border-darkBorder">
             <h2 className="text-2xl font-heading mb-10">
-              More Projects
+              More studies
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {relatedProjects.map((relatedProject) => (
