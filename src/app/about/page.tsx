@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Albert Francis P. Florin is a geodetic engineer and developer in Metro Manila. He writes about geospatial systems, infrastructure, and the tools we use to think.',
+  description: 'Albert Florin is a geodetic engineer and developer in Metro Manila. He writes about geospatial systems, infrastructure, and the tools we use to think.',
   alternates: { canonical: '/about' },
 }
 
@@ -63,12 +63,20 @@ export default function AboutPage() {
             >
               GitHub
             </a>
-            . Prose and images © Albert Francis P. Florin, Philippines,
+            . Prose and images © Albert Florin, Philippines,
             all rights reserved, unless otherwise credited. See{' '}
             <a href="/privacy" className="underline">
               privacy
-            </a>{' '}
-            and{' '}
+            </a>
+            ,{' '}
+            <a href="/cookies" className="underline">
+              cookies
+            </a>
+            ,{' '}
+            <a href="/editorial" className="underline">
+              editorial policy
+            </a>
+            , and{' '}
             <a href="/terms" className="underline">
               terms
             </a>

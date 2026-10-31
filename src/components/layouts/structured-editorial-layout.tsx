@@ -180,7 +180,7 @@ export function StructuredEditorialLayout({
         </div>
 
         <p className="mt-8 max-w-4xl text-xs text-muted-foreground">
-          © Albert Francis P. Florin, all rights reserved. Short quotation under 90
+          © Albert Florin, all rights reserved. Short quotation under 90
           words with credit and link welcome. See <Link href="/terms" className="underline">terms</Link> for reuse.
         </p>
 

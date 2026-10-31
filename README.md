@@ -1,6 +1,8 @@
-# antiparity.net
+# AntiParity
 
-Personal publication and portfolio for **Albert Francis P. Florin** — geodetic engineer and developer in Metro Manila. Essays, field notes, and case studies on geospatial systems, infrastructure, and the tools we use to think.
+**Wordmark:** `antiparity.net`
+
+Personal publication and portfolio for **Albert Florin** — geodetic engineer and developer in Metro Manila. Essays, field notes, and case studies on geospatial systems, infrastructure, and the tools we use to think.
 
 ## Stack
 
@@ -38,7 +40,7 @@ Push to `main`. The GitHub Actions workflow builds and deploys `out/` to GitHub 
 ## Licensing
 
 - Site code: MIT. See `LICENSE`.
-- Prose, essays, images, and figures: © Albert Francis P. Florin, all rights reserved, unless otherwise credited.
+- Prose, essays, images, and figures: © Albert Florin, all rights reserved, unless otherwise credited.
 - Third-party images remain the property of their credited creators.
 
 The site began from the MIT-licensed [neobrutalism saas template](https://github.com/neobrutalism-templates/saas) and has since been reworked into a publication. The upstream notice is retained in `LICENSE` as required.

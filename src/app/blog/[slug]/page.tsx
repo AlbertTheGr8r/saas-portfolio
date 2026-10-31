@@ -94,12 +94,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     dateModified: post.updated,
     author: {
       '@type': 'Person',
-      name: 'Albert Francis P. Florin',
+      name: 'Albert Florin',
       url: 'https://antiparity.net',
     },
     publisher: {
       '@type': 'Person',
-      name: 'Albert Francis P. Florin',
+      name: 'Albert Florin',
       url: 'https://antiparity.net',
     },
     mainEntityOfPage: {

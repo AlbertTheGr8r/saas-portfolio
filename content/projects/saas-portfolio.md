@@ -13,7 +13,7 @@ draft: false
 
 # This site itself
 
-This is a static publication and portfolio. Essays, field notes, and case studies live as Markdown, get validated by Velite at build time, and ship as HTML.
+AntiParity (`antiparity.net`) is a static publication and portfolio. Essays, field notes, and case studies live as Markdown, get validated by Velite at build time, and ship as HTML.
 
 The project began from the MIT-licensed [neobrutalism saas template](https://github.com/neobrutalism-templates/saas). The starter is no longer the point. The site is now a personal publication: a writing system, a case-study archive, and a place to keep the work legible.
 

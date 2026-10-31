@@ -41,11 +41,12 @@ export function Navbar() {
       >
         <div className="mx-auto w-container max-w-full px-5">
           <div className="flex h-14 items-center justify-between">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
+              aria-label="AntiParity home"
               className="text-xl font-heading text-main-foreground hover:opacity-80 transition-opacity"
             >
-              Albert
+              antiparity.net
             </Link>
 
             <div className="hidden md:flex items-center gap-1">

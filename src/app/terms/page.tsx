@@ -15,7 +15,7 @@ export default function TermsPage() {
       <div className="space-y-6 text-lg">
         <p>Last updated: October 31, 2026</p>
         <p>
-          Operator: Albert Francis P. Florin, Philippines.{' '}
+          Operator: Albert Florin, Philippines.{' '}
           <a href="mailto:albertflorin93@gmail.com" className="underline">
             albertflorin93@gmail.com
           </a>
@@ -25,8 +25,7 @@ export default function TermsPage() {
         <section>
           <h2 className="mb-4 font-heading text-2xl font-semibold">Content ownership</h2>
           <p>
-            All prose, essays, images, and figures on this site are © Albert
-            Francis P. Florin, Philippines, all rights reserved, unless a caption
+            All prose, essays, images, and figures on this site are © Albert Florin, Philippines, all rights reserved, unless a caption
             or post metadata credits another source. Third-party images remain
             the property of their credited creators and are used only with
             permission or under an applicable license. Publication on GitHub
@@ -81,7 +80,9 @@ export default function TermsPage() {
               albertflorin93@gmail.com
             </a>{' '}
             or the <Link href="/contact" className="underline">contact page</Link>.
-            See also the <Link href="/privacy" className="underline">privacy policy</Link>.
+            See also the <Link href="/privacy" className="underline">privacy policy</Link>,{' '}
+            <Link href="/cookies" className="underline">cookie policy</Link>, and{' '}
+            <Link href="/editorial" className="underline">editorial policy</Link>.
           </p>
         </section>
       </div>

@@ -22,6 +22,8 @@ const staticPages = [
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
   { path: '/contact', priority: '0.8', changefreq: 'monthly' },
   { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+  { path: '/cookies', priority: '0.3', changefreq: 'yearly' },
+  { path: '/editorial', priority: '0.4', changefreq: 'yearly' },
   { path: '/terms', priority: '0.3', changefreq: 'yearly' },
 ]
 
@@ -72,14 +74,14 @@ ${allUrls.map(url => `  <url>
 
 // Generate RSS Feed
 const feed = new Feed({
-  title: "Albert Francis P. Florin",
-  description: 'Thoughts, learnings, and explorations in code.',
+  title: "AntiParity",
+  description: 'Essays, field notes, and case studies on geospatial systems, infrastructure, and the tools we use to think.',
   id: siteUrl,
   link: siteUrl,
   language: 'en',
   image: `${siteUrl}/favicon.ico`,
   favicon: `${siteUrl}/favicon.ico`,
-  copyright: `© Albert Francis P. Florin, All rights reserved ${date.getFullYear()}`,
+  copyright: `© Albert Florin, All rights reserved ${date.getFullYear()}`,
   updated: date,
   generator: 'Feed for Node.js',
   feedLinks: {
@@ -101,7 +103,7 @@ posts.forEach((post) => {
     link: `${siteUrl}${post.url}`,
     description: post.excerpt,
     // Note: content not available in Velite without markdown processing
-    author: [{ name: 'Albert Francis P. Florin' }],
+    author: [{ name: 'Albert Florin' }],
     date: new Date(post.date),
   })
 })

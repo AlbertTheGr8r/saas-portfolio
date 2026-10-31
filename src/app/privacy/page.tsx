@@ -15,12 +15,24 @@ export default function PrivacyPolicy() {
       <div className="space-y-6 text-lg">
         <p>Last updated: October 31, 2026</p>
         <p>
-          Operator: Albert Francis P. Florin, Philippines.{' '}
+          Operator: Albert Florin, Philippines.{' '}
           <a href="mailto:albertflorin93@gmail.com" className="underline">
             albertflorin93@gmail.com
           </a>
           .
         </p>
+
+        <section>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Scope and applicable law</h2>
+          <p>
+            AntiParity is operated from the Philippines. Personal data is handled
+            with the Philippine Data Privacy Act of 2012 (RA 10173) in mind. For
+            visitors in the EEA or UK, GDPR and UK GDPR protections apply. For
+            visitors in California, CCPA/CPRA protections apply. Where local law
+            gives additional rights, those rights apply.
+          </p>
+          <p className="mt-4">We do not sell personal information.</p>
+        </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-semibold">Information We Collect</h2>
@@ -34,6 +46,18 @@ export default function PrivacyPolicy() {
             providers process request data such as IP address, user agent, and
             timestamps to deliver the site, prevent abuse, and keep it available.
             Their own privacy policies apply to that processing.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">How we use data</h2>
+          <p>
+            Request data is used to deliver the site, prevent abuse, and keep it
+            available. Consent choices are used to remember your preferences.
+            When advertising is enabled, ad-related data is used to serve and
+            measure ads. Legal bases are consent for non-essential cookies and
+            advertising, legitimate interests for security and delivery, and
+            legal obligation where applicable.
           </p>
         </section>
 
@@ -73,7 +97,18 @@ export default function PrivacyPolicy() {
             >
               Google Advertising Policies
             </a>
-            .
+            . See the{' '}
+            <Link href="/cookies" className="underline">cookie policy</Link> for
+            the cookies used on this site, and Google&apos;s{' '}
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-primary"
+            >
+              partner sites page
+            </a>{' '}
+            for how Google uses information from sites that use its services.
           </p>
         </section>
 
@@ -82,6 +117,40 @@ export default function PrivacyPolicy() {
           <p>
             Linked projects, papers, and maps follow their own policies.
             Consult the respective pages for details.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Retention</h2>
+          <p>
+            Cloudflare and GitHub Pages retain request logs under their own
+            policies. Consent choices stay in your browser until you clear them.
+            Google retains ad-related data under its policies. Email
+            correspondence is kept only as long as needed to respond or to
+            maintain a record of a correction.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Your rights</h2>
+          <p>
+            Depending on where you live, you may have the right to access,
+            correct, delete, or object to the processing of your personal data,
+            to request portability, or to withdraw consent. To make a request,
+            email{' '}
+            <a href="mailto:albertflorin93@gmail.com" className="underline">
+              albertflorin93@gmail.com
+            </a>
+            . You may also complain to the Philippine National Privacy
+            Commission or your local data protection authority.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Children</h2>
+          <p>
+            This site is not directed at children under 13, and personal
+            information is not knowingly collected from them.
           </p>
         </section>
 
@@ -100,7 +169,9 @@ export default function PrivacyPolicy() {
               albertflorin93@gmail.com
             </a>{' '}
             or the <Link href="/contact" className="underline">contact page</Link>.
-            See also the <Link href="/terms" className="underline">terms</Link>.
+            See also the <Link href="/terms" className="underline">terms</Link>,{' '}
+            <Link href="/cookies" className="underline">cookie policy</Link>, and{' '}
+            <Link href="/editorial" className="underline">editorial policy</Link>.
           </p>
         </section>
       </div>

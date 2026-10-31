@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Contact Albert Francis P. Florin for inquiries, corrections, and resume requests.',
+  description: 'Contact Albert Florin for inquiries, corrections, and resume requests.',
   alternates: { canonical: '/contact' },
 }
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
               </Button>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Site code is MIT. Prose and images © Albert Francis P. Florin,
+              Site code is MIT. Prose and images © Albert Florin,
               Philippines, all rights reserved, unless otherwise credited.
             </p>
           </section>

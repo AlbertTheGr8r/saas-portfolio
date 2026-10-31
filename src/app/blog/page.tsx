@@ -4,6 +4,7 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Calendar } from 'lucide-react'
+import { getReadingTime } from '@/lib/reading-time'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -41,6 +42,9 @@ function PostCard({ post }: { post: typeof posts[0] }) {
               (Updated {format(parseISO(post.updated), 'MMM d, yyyy')})
             </span>
           )}
+          <span className="text-xs text-muted-foreground/60">
+            · {getReadingTime(post.content)} min read
+          </span>
         </div>
         
         <h2 className="mt-3 text-xl font-heading">
@@ -65,6 +69,16 @@ function PostCard({ post }: { post: typeof posts[0] }) {
             ))}
           </div>
         )}
+
+        <div className="mt-auto relative z-10 pt-6">
+          <Link
+            href={post.url}
+            aria-label={`Read more: ${post.title}`}
+            className="font-heading text-sm underline underline-offset-4"
+          >
+            Read more →
+          </Link>
+        </div>
       </div>
     </article>
   )
@@ -80,6 +94,7 @@ export default function BlogPage() {
   const regularPosts = allPosts.filter((post) => !post.featured)
 
   const displayFeatured = featuredPosts.slice(0, 2)
+  const remainingPosts = displayFeatured.length > 0 ? regularPosts : allPosts
 
   return (
     <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
@@ -87,7 +102,8 @@ export default function BlogPage() {
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-heading">Blog</h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-            Thoughts, learnings, and explorations in code.
+            Essays, field notes, and case studies on geospatial systems,
+            infrastructure, and the tools we use to think.
           </p>
         </header>
 
@@ -95,7 +111,7 @@ export default function BlogPage() {
           <section className="mb-16">
             <h2 className="mb-6 text-xl font-heading flex items-center gap-2">
               <span className="inline-block w-3 h-3 bg-main rounded-full"></span>
-              Featured
+              Start here
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
               {displayFeatured.map((post) => (
@@ -105,11 +121,11 @@ export default function BlogPage() {
           </section>
         )}
 
-        {allPosts.length > 0 && (
+        {remainingPosts.length > 0 && (
           <section>
-            <h2 className="mb-6 text-xl font-heading">All Posts</h2>
+            <h2 className="mb-6 text-xl font-heading">All posts</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {allPosts.map((post) => (
+              {remainingPosts.map((post) => (
                 <PostCard key={post.slug} post={post} />
               ))}
             </div>

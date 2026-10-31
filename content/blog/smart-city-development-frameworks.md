@@ -8,7 +8,7 @@ featured: false
 draft: false
 coverImage: "/static/quezon-city-night.webp"
 coverImageAlt: "Quezon City at night, showing residential and commercial buildings along a highway"
-coverImageCredit: "Photo: Albert Francis P. Florin"
+coverImageCredit: "Photo: Albert Florin"
 ---
 
 # An Analysis of Smart City Development Frameworks
