@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { format, parseISO } from 'date-fns'
 import { projects } from '.velite'
 import { Badge } from '@/components/ui/badge'
@@ -14,9 +15,22 @@ interface ProjectPageProps {
 }
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }))
+  return projects
+    .filter((project) => !project.draft)
+    .map((project) => ({
+      slug: project.slug,
+    }))
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const project = projects.find((p) => p.slug === slug)
+  if (!project) return {}
+  return {
+    title: project.title,
+    description: project.excerpt,
+    alternates: { canonical: `https://antiparity.net${project.url}` },
+  }
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

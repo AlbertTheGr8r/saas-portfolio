@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { compareDesc } from 'date-fns'
 import { posts, projects } from '.velite'
@@ -5,6 +6,10 @@ import { ArticleCard } from '@/components/article-card'
 import { getReadingTime } from '@/lib/reading-time'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 function postCardProps(post: (typeof posts)[0]) {
   return {
