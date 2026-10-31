@@ -1,48 +1,49 @@
 ---
 title: "This site itself"
 date: "2026-02-14"
+updated: "2026-10-31"
 status: "ongoing"
-excerpt: "A modern portfolio template built with Next.js, Tailwind CSS, and neobrutalism design."
-tags: ["nextjs", "tailwind", "portfolio"]
-techStack: ["Next.js", "Tailwind CSS", "TypeScript", "shadcn/ui"]
+excerpt: "A static publication and portfolio built with Next.js, Velite, and a neobrutalist design system."
+tags: ["nextjs", "velite", "static-site"]
+techStack: ["Next.js", "Velite", "Tailwind CSS", "TypeScript"]
 demoUrl: "https://antiparity.net"
 repoUrl: "https://github.com/AlbertTheGr8r/saas-portfolio"
 draft: false
 ---
 
-# SaaS Portfolio Template
+# This site itself
 
-A modern, responsive portfolio template designed with neobrutalism aesthetics. The original template was lifted from [Neobrutalism Templates](https://github.com/neobrutalism-templates/saas). It's gone as of this writing, but I'm keeping it here for reference.
+This is a static publication and portfolio. Essays, field notes, and case studies live as Markdown, get validated by Velite at build time, and ship as HTML.
 
-## Features
+The project began from the MIT-licensed [neobrutalism saas template](https://github.com/neobrutalism-templates/saas). The starter is no longer the point. The site is now a personal publication: a writing system, a case-study archive, and a place to keep the work legible.
 
-- Next.js 14 with App Router
-- Tailwind CSS for styling
-- Dark mode support
+## What it does
+
+- Markdown content for essays and case studies
 - Static export for GitHub Pages
-- Contentlayer for blog/projects
+- Generated RSS, Atom, JSON Feed, sitemap, and content index
+- Dark mode
+- Per-post metadata and structured data
 
-## Tech Stack
+## Stack
 
-I'm using this as a learning project to familiarize myself with modern web development. I'm also using it as a portfolio template for my own projects.
+- **Next.js** — static export and routing
+- **Velite** — content schema and build-time validation
+- **Tailwind CSS** — styling
+- **TypeScript** — type safety
+- **GitHub Actions** — build and deploy
+- **Cloudflare** — DNS, TLS, cache
 
-- **Next.js** - React framework
-- **Tailwind CSS** - Utility-first CSS
-- **TypeScript** - Type safety
-- **shadcn/ui** - Component library
-- **Contentlayer** - Content management
-
-## Development
+## Build
 
 ```bash
-# Install dependencies
 pnpm install
-
-# Run dev server
 pnpm dev
-
-# Build for production
 pnpm build
 ```
 
-The project is optimized for static export and can be deployed to GitHub Pages or any static hosting provider. If things go well, the push should run the build.
+The build validates content, generates the sitemap and feeds, then exports the site to `out/`.
+
+## License
+
+Site code is MIT. Prose and images are all rights reserved unless otherwise credited. The upstream MIT notice is retained in `LICENSE`.

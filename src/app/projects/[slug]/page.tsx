@@ -38,7 +38,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     '@type': 'Article',
     headline: project.title,
     description: project.excerpt,
-    image: project.coverImage,
+    image: project.coverImage
+      ? `https://antiparity.net${project.coverImage}`
+      : undefined,
     datePublished: project.date,
     dateModified: project.updated,
     author: {
@@ -53,7 +55,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': project.url,
+      '@id': `https://antiparity.net${project.url}`,
     },
   }
 

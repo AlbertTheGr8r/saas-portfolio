@@ -60,6 +60,7 @@ interface StructuredEditorialLayoutProps {
   date: string
   updated?: string
   excerpt?: string
+  coverImageCredit?: string
   tags: string[]
   url: string
   versions?: VersionInfo[]
@@ -73,6 +74,7 @@ export function StructuredEditorialLayout({
   date,
   updated,
   excerpt,
+  coverImageCredit,
   tags,
   url,
   versions,
@@ -125,6 +127,12 @@ export function StructuredEditorialLayout({
               {excerpt}
             </p>
           )}
+
+          {coverImageCredit && (
+            <p className="mt-4 text-xs text-muted-foreground">
+              {coverImageCredit}
+            </p>
+          )}
         </header>
 
         {/* HARD DIVIDER */}
@@ -173,6 +181,11 @@ export function StructuredEditorialLayout({
             </div>
           </div>
         </div>
+
+        <p className="mt-8 max-w-4xl text-xs text-muted-foreground">
+          © Albert Francis P. Florin, all rights reserved. Short quotation under 90
+          words with credit and link welcome. See <Link href="/terms" className="underline">terms</Link> for reuse.
+        </p>
 
         {/* HARD FINAL DIVIDER */}
         <div className="border-t-4 border-border dark:border-main my-16" />

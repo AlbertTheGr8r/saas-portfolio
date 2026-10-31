@@ -10,6 +10,7 @@ interface EditorialLayoutProps {
   date: string
   updated?: string
   excerpt?: string
+  coverImageCredit?: string
   tags: string[]
   url: string
   versions?: VersionInfo[]
@@ -22,6 +23,7 @@ export function EditorialLayout({
   date,
   updated,
   excerpt,
+  coverImageCredit,
   tags,
   url,
   versions,
@@ -71,6 +73,12 @@ export function EditorialLayout({
               {excerpt}
             </p>
           )}
+
+          {coverImageCredit && (
+            <p className="mt-4 text-xs text-muted-foreground">
+              {coverImageCredit}
+            </p>
+          )}
         </header>
 
         {/* HARD DIVIDER */}
@@ -108,6 +116,11 @@ export function EditorialLayout({
             <ShareButtons url={url} title={title} />
           </div>
         </div>
+
+        <p className="mt-8 max-w-3xl text-xs text-muted-foreground">
+          © Albert Francis P. Florin, all rights reserved. Short quotation under 90
+          words with credit and link welcome. See <Link href="/terms" className="underline">terms</Link> for reuse.
+        </p>
 
         {/* HARD FINAL DIVIDER */}
         <div className="border-t-4 border-border dark:border-main my-16" />

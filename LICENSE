@@ -1,15 +1,16 @@
-MIT License
+MIT License — Site Code
 
-Copyright (c) 2024 Samuel Breznjak
+Copyright (c) 2024 Samuel Breznjak (upstream neobrutalism template)
+Copyright (c) 2026 Albert Francis P. Florin (modifications, site code)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
+of the site code and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
+The above copyright notices and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -19,3 +20,19 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+CONTENT NOTICE (not covered by MIT above)
+
+All prose, essays, images, and figures in /content and /public/static
+are © Albert Francis P. Florin, Philippines. All rights reserved,
+unless a caption or post metadata credits another source.
+
+No reuse without written permission except short quotation under
+90 words with credit and link. Third-party images remain the
+property of their credited creators and are used only with
+permission or under an applicable license. Code samples embedded
+in prose remain MIT unless noted. Third-party stack (Next.js,
+Velite, Tailwind, Radix, neobrutalism components) remains under
+its respective MIT license with attribution in README/package.

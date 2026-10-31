@@ -16,6 +16,8 @@ const posts = defineCollection({
       draft: s.boolean().default(false),
       archived: s.boolean().default(false),
       coverImage: s.string().optional(),
+      coverImageAlt: s.string().optional(),
+      coverImageCredit: s.string().optional(),
       // Use raw() to get markdown content as string, process with next-mdx-remote
       content: s.raw(),
       metadata: s.metadata(),

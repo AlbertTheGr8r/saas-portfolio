@@ -12,30 +12,18 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
   { href: '/projects', label: 'Projects' },
-  { href: '/about', label: 'Profile' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export function Navbar() {
   const pathname = usePathname()
-  const isHomePage = pathname === '/'
-  const [isVisible, setIsVisible] = useState(!isHomePage)
+  const [isVisible, setIsVisible] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    if (!isHomePage) {
-      setIsVisible(true)
-      return
-    }
-
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > 400)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [isHomePage])
+    setIsVisible(true)
+  }, [pathname])
 
   useEffect(() => {
     setIsMobileMenuOpen(false)

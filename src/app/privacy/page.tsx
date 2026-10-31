@@ -1,98 +1,106 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'How antiparity.net handles data, cookies, hosting, and advertising.',
+  alternates: { canonical: '/privacy' },
+}
+
 export default function PrivacyPolicy() {
   return (
     <main className="mx-auto max-w-3xl px-5 py-16">
       <h1 className="mt-8 mb-8 font-heading text-4xl font-bold">Privacy Policy</h1>
-      
+
       <div className="space-y-6 text-lg">
-        <p>Last updated: {new Date().toLocaleDateString()}</p>
+        <p>Last updated: October 31, 2026</p>
+        <p>
+          Operator: Albert Francis P. Florin, Philippines.{' '}
+          <a href="mailto:albertflorin93@gmail.com" className="underline">
+            albertflorin93@gmail.com
+          </a>
+          .
+        </p>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-semibold">Information We Collect</h2>
           <p>
-            This is a static blog site. We do not collect, store, or process any personal information 
-            from our visitors. The site is built with static pages and does not require user registration 
-            or account creation.
+            This is a static site. There are no accounts and no forms that store
+            personal information. The operator does not run analytics or tracking
+            scripts. Pages ship as static HTML.
+          </p>
+          <p className="mt-4">
+            The site is delivered through Cloudflare and GitHub Pages. Those
+            providers process request data such as IP address, user agent, and
+            timestamps to deliver the site, prevent abuse, and keep it available.
+            Their own privacy policies apply to that processing.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-4 font-heading text-2xl font-semibold">Cookies</h2>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Cookies and Advertising</h2>
           <p>
-            This website uses Google AdSense to display advertisements. Google AdSense uses cookies 
-            to serve ads based on your prior visits to this site and other sites on the internet. 
+            Advertising is not currently enabled. If Google AdSense is enabled,
+            Google as a third-party vendor will use cookies to serve ads based on
+            prior visits to this site and other sites. This page will be updated
+            before ads are enabled.
           </p>
           <p className="mt-4">
-            The cookies used by Google AdSense may include:
-          </p>
-          <ul className="ml-6 mt-2 list-disc space-y-1">
-            <li>DoubleClick DART cookies - Used to serve ads based on your interests</li>
-            <li>Google Analytics cookies (if applicable) - Used to analyze site traffic</li>
-          </ul>
-          <p className="mt-4">
-            You may opt out of the use of the DART cookie by visiting the{" "}
-            <a 
-              href="https://adssettings.google.com/" 
-              target="_blank" 
+            You may opt out of personalized advertising by visiting the{' '}
+            <a
+              href="https://adssettings.google.com/"
+              target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-primary"
             >
               Google Ad Settings
-            </a>{" "}
-            page.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="mb-4 font-heading text-2xl font-semibold">Third-Party Advertising</h2>
-          <p>
-            Google, as a third-party vendor, uses cookies to serve ads on our site. Google&apos;s use 
-            of the DART cookie enables it to serve advertisements to our users based on their 
-            visit to our site and other sites on the internet.
-          </p>
-          <p className="mt-4">
-            Users may opt out of the use of cookies for advertising purposes by visiting the{" "}
-            <a 
-              href="https://www.aboutads.info/choices/" 
-              target="_blank" 
+            </a>{' '}
+            page or the{' '}
+            <a
+              href="https://www.aboutads.info/choices/"
+              target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-primary"
             >
               About Ads
-            </a>{" "}
-            page or by opting out through the{" "}
-            <a 
-              href="https://policies.google.com/technologies/ads" 
-              target="_blank" 
+            </a>{' '}
+            page, and review the{' '}
+            <a
+              href="https://policies.google.com/technologies/ads"
+              target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-primary"
             >
               Google Advertising Policies
-            </a>.
+            </a>
+            .
           </p>
         </section>
 
         <section>
-          <h2 className="mb-4 font-heading text-2xl font-semibold">Third-Party Privacy Policies</h2>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Third-Party Links</h2>
           <p>
-            This Privacy Policy does not apply to other advertisers or websites that may be linked 
-            on our site. We encourage you to consult the respective Privacy Policies of these 
-            third-party ad servers for more detailed information.
+            Linked projects, papers, and maps follow their own policies.
+            Consult the respective pages for details.
           </p>
         </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-semibold">Changes to This Policy</h2>
           <p>
-            We may update our Privacy Policy from time to time. We will notify you of any changes 
-            by posting the new Privacy Policy on this page.
+            Updates ship by posting a new version on this page with a new date.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-4 font-heading text-2xl font-semibold">Contact Us</h2>
+          <h2 className="mb-4 font-heading text-2xl font-semibold">Contact</h2>
           <p>
-            If you have any questions about this Privacy Policy, please contact us through the 
-            site&apos;s contact page.
+            Questions about this policy:{' '}
+            <a href="mailto:albertflorin93@gmail.com" className="underline">
+              albertflorin93@gmail.com
+            </a>{' '}
+            or the <Link href="/contact" className="underline">contact page</Link>.
+            See also the <Link href="/terms" className="underline">terms</Link>.
           </p>
         </section>
       </div>

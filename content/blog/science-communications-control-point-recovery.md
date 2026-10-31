@@ -6,6 +6,8 @@ tags: ["engineering", "data", "community", "methodology"]
 featured: true
 draft: false
 coverImage: "/static/science-comms.jpg"
+coverImageAlt: "Albert Florin speaking at the Geodetic Engineers of the Philippines Region V event"
+coverImageCredit: "Photo: Luke Austin R. Vargas"
 ---
 
 *This is a companion article to [FixMarker: Building a Community-Driven Control Point Recovery Platform](/projects/fixmarker/) where I explored the development decision behind this project. Here, I'll walk through idea behind it.*

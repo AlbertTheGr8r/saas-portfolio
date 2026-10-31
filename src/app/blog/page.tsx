@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Calendar } from 'lucide-react'
 import { filterNonVersionedPosts } from '@/lib/versions'
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Essays, field notes, and case studies on geospatial engineering, infrastructure, and systems.',
+  alternates: { canonical: '/blog' },
+}
 
 function PostCard({ post }: { post: typeof posts[0] }) {
   return (
@@ -12,10 +19,17 @@ function PostCard({ post }: { post: typeof posts[0] }) {
         <div className="aspect-video w-full max-w-full overflow-hidden">
           <img
             src={post.coverImage}
-            alt={post.title}
+            alt={post.coverImageAlt || post.title}
             className="h-full w-full max-w-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
+      )}
+      {post.coverImageCredit && (
+        <p className="px-6 pt-3 text-xs text-muted-foreground">
+          {post.coverImageCredit}
+        </p>
       )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">

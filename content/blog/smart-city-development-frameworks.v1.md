@@ -5,7 +5,6 @@ excerpt: "A comprehensive analysis of smart city development frameworks publishe
 tags: ["smart-city", "urban-development", "research", "project-smart-metro"]
 featured: false
 draft: false
-coverImage: "/static/smart-city.jpg"
 ---
 
 # An Analysis of Smart City Development Frameworks

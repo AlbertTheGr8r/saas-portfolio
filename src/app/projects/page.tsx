@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import { projects } from '.velite'
 import { compareDesc, format, parseISO } from 'date-fns'
 import { Calendar, ExternalLink, Github } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'Case studies and working projects in geospatial engineering, mapping, and software.',
+  alternates: { canonical: '/projects' },
+}
 
 function ProjectCard({ project }: { project: typeof projects[0] }) {
   return (
