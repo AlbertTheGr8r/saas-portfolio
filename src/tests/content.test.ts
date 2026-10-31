@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { glob } from 'glob'
 import matter from 'gray-matter'
 import { readFileSync, existsSync } from 'fs'
-import { join, dirname } from 'path'
+import { join } from 'path'
 import { PostSchema, ProjectSchema } from './schemas'
 
 describe('Content Integrity Tests', () => {

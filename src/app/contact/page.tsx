@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { Mail, Github } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
 import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Github className="mr-2 h-5 w-5" />
+                  <SiGithub size={20} className="mr-2" />
                   GitHub
                 </a>
               </Button>
