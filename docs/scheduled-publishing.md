@@ -1,6 +1,6 @@
 # Publishing Schedule
 
-**Cadence:** the 1st and 15th. Do not announce the cadence publicly until three posts are edited and ready.
+**Cadence:** the 15th and 30th (the 30th, or the last day of February). Do not announce the cadence publicly until three posts are edited and ready.
 
 ## How publishing works
 
@@ -20,17 +20,20 @@ If automatic publishing is wanted later, run the build/deploy workflow on a sche
 ```yaml
 on:
   schedule:
-    - cron: "0 1 1,15 * *" # 09:00 PHT on the 1st and 15th
+    - cron: "0 1 15 * *" # 09:00 PHT on the 15th
+    - cron: "0 1 30 * *" # 09:00 PHT on the 30th
+    - cron: "0 1 28 2 *" # 09:00 PHT on 28 February
+    - cron: "0 1 29 2 *" # 09:00 PHT on 29 February (leap years)
 ```
 
-GitHub Actions cron runs in UTC and can be delayed. Manual publishing on the day is more predictable for a personal blog.
+Cron cannot express "the last day of the month", so February needs its own line. GitHub Actions cron runs in UTC and can be delayed. Manual publishing on the day is more predictable for a personal blog.
 
 ## Editing rhythm
 
 | Publish | Outline | Draft | Edit/fact-check | Publish |
 |---|---|---|---|---|
-| 1st | 15th prior | 22nd prior | 27th prior | 1st |
 | 15th | 1st | 8th | 12th | 15th |
+| 30th | 15th | 22nd | 27th | 30th (28 Feb) |
 
 ## Checklist
 
