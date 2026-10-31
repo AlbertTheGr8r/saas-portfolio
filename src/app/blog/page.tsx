@@ -4,7 +4,6 @@ import { compareDesc, format, parseISO } from 'date-fns'
 import { posts } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Calendar } from 'lucide-react'
-import { filterNonVersionedPosts } from '@/lib/versions'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -72,9 +71,7 @@ function PostCard({ post }: { post: typeof posts[0] }) {
 }
 
 export default function BlogPage() {
-  const visiblePosts = filterNonVersionedPosts(posts)
-
-  const allPosts = visiblePosts
+  const allPosts = posts
     .filter((post) => !post.draft && !post.archived)
     .filter((post) => new Date(post.date) <= new Date())
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))

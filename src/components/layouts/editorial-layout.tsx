@@ -3,7 +3,6 @@ import { Badge } from '@/components/ui/badge'
 import { ShareButtons } from '@/components/share-buttons'
 import { ReactNode } from 'react'
 import Link from 'next/link'
-import type { VersionInfo } from '@/lib/versions'
 
 interface EditorialLayoutProps {
   title: string
@@ -15,7 +14,6 @@ interface EditorialLayoutProps {
   coverImageCredit?: string
   tags: string[]
   url: string
-  versions?: VersionInfo[]
   children: ReactNode
   footer?: ReactNode
 }
@@ -30,7 +28,6 @@ export function EditorialLayout({
   coverImageCredit,
   tags,
   url,
-  versions,
   children,
   footer,
 }: EditorialLayoutProps) {
@@ -52,21 +49,6 @@ export function EditorialLayout({
               </>
             )}
           </div>
-
-          {versions && versions.length > 0 && (
-            <div className="flex items-center gap-2 mb-4">
-              {versions.map((v) => (
-                <Link key={v.slug} href={v.url}>
-                  <Badge
-                    variant={v.isCurrent ? 'default' : 'neutral'}
-                    className="cursor-pointer hover:opacity-80 text-xs"
-                  >
-                    {v.versionLabel}
-                  </Badge>
-                </Link>
-              ))}
-            </div>
-          )}
 
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading leading-tight">
             {title}

@@ -25,12 +25,9 @@ const staticPages = [
   { path: '/terms', priority: '0.3', changefreq: 'yearly' },
 ]
 
-const VERSION_SUFFIX = /\.v\d+$/
-const isVersionedSlug = (slug) => VERSION_SUFFIX.test(slug || '')
-
 function generateSitemap() {
   const posts = allPosts
-    .filter((post) => !post.draft && !isVersionedSlug(post.slug))
+    .filter((post) => !post.draft)
     .filter((post) => new Date(post.date) <= new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
@@ -93,7 +90,7 @@ const feed = new Feed({
 })
 
 const posts = allPosts
-  .filter((post) => !post.draft && !isVersionedSlug(post.slug))
+  .filter((post) => !post.draft)
   .filter((post) => new Date(post.date) <= new Date())
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
@@ -116,7 +113,7 @@ console.log('RSS feeds generated!')
 
 // Generate Content Index
 const indexPosts = allPosts
-  .filter((post) => !post.draft && !isVersionedSlug(post.slug))
+  .filter((post) => !post.draft)
   .filter((post) => new Date(post.date) <= new Date())
   .map((post) => ({
     slug: post.slug,
