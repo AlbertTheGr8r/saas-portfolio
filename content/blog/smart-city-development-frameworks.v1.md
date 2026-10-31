@@ -5,6 +5,9 @@ excerpt: "A comprehensive analysis of smart city development frameworks publishe
 tags: ["smart-city", "urban-development", "research", "project-smart-metro"]
 featured: false
 draft: false
+coverImage: "/static/quezon-city-night.webp"
+coverImageAlt: "Quezon City at night, showing residential and commercial buildings along a highway"
+coverImageCredit: "Photo: Albert Francis P. Florin"
 ---
 
 # An Analysis of Smart City Development Frameworks

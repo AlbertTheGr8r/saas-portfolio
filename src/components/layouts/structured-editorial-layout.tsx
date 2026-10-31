@@ -60,6 +60,8 @@ interface StructuredEditorialLayoutProps {
   date: string
   updated?: string
   excerpt?: string
+  coverImage?: string
+  coverImageAlt?: string
   coverImageCredit?: string
   tags: string[]
   url: string
@@ -74,6 +76,8 @@ export function StructuredEditorialLayout({
   date,
   updated,
   excerpt,
+  coverImage,
+  coverImageAlt,
   coverImageCredit,
   tags,
   url,
@@ -128,10 +132,21 @@ export function StructuredEditorialLayout({
             </p>
           )}
 
-          {coverImageCredit && (
-            <p className="mt-4 text-xs text-muted-foreground">
-              {coverImageCredit}
-            </p>
+          {coverImage && (
+            <figure className="mt-8">
+              <img
+                src={coverImage}
+                alt={coverImageAlt || title}
+                className="w-full rounded-base border-2 border-border object-cover shadow-shadow dark:border-darkBorder dark:shadow-darkShadow"
+                loading="lazy"
+                decoding="async"
+              />
+              {coverImageCredit && (
+                <figcaption className="mt-3 text-xs text-muted-foreground">
+                  {coverImageCredit}
+                </figcaption>
+              )}
+            </figure>
           )}
         </header>
 

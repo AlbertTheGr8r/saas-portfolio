@@ -137,6 +137,8 @@ if (useStructuredLayout) {
           date={post.date}
           updated={post.updated}
           excerpt={post.excerpt}
+          coverImage={post.coverImage}
+          coverImageAlt={post.coverImageAlt}
           coverImageCredit={post.coverImageCredit}
           tags={post.tags}
           url={post.url}
@@ -161,6 +163,8 @@ if (useStructuredLayout) {
         date={post.date}
         updated={post.updated}
         excerpt={post.excerpt}
+        coverImage={post.coverImage}
+        coverImageAlt={post.coverImageAlt}
         coverImageCredit={post.coverImageCredit}
         tags={post.tags}
         url={post.url}

@@ -63,3 +63,6 @@ next-env.d.ts
 
 # generated sitemap (built in CI before export)
 /public/sitemap.xml
+
+# full-resolution source images (not deployed)
+/originals/
