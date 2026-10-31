@@ -22,11 +22,16 @@ const staticPages = [
   { path: '/about', priority: '0.8', changefreq: 'monthly' },
   { path: '/contact', priority: '0.8', changefreq: 'monthly' },
   { path: '/privacy', priority: '0.3', changefreq: 'yearly' },
+  { path: '/terms', priority: '0.3', changefreq: 'yearly' },
 ]
+
+const VERSION_SUFFIX = /\.v\d+$/
+const isVersionedSlug = (slug) => VERSION_SUFFIX.test(slug || '')
 
 function generateSitemap() {
   const posts = allPosts
-    .filter((post) => !post.draft)
+    .filter((post) => !post.draft && !isVersionedSlug(post.slug))
+    .filter((post) => new Date(post.date) <= new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   const projects = allProjects
@@ -36,8 +41,7 @@ function generateSitemap() {
   const pages = staticPages.map(p => ({
     loc: `${siteUrl}${p.path}`,
     changefreq: p.changefreq,
-    priority: p.priority,
-    lastmod: date.toISOString().split('T')[0]
+    priority: p.priority
   }))
 
   const blogUrls = posts.map(post => ({
@@ -59,8 +63,7 @@ function generateSitemap() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allUrls.map(url => `  <url>
-    <loc>${url.loc}</loc>
-    <lastmod>${url.lastmod}</lastmod>
+    <loc>${url.loc}</loc>${url.lastmod ? `\n    <lastmod>${url.lastmod}</lastmod>` : ''}
     <changefreq>${url.changefreq}</changefreq>
     <priority>${url.priority}</priority>
   </url>`).join('\n')}
@@ -72,14 +75,14 @@ ${allUrls.map(url => `  <url>
 
 // Generate RSS Feed
 const feed = new Feed({
-  title: "Albert's Blog",
+  title: "Albert Francis P. Florin",
   description: 'Thoughts, learnings, and explorations in code.',
   id: siteUrl,
   link: siteUrl,
   language: 'en',
   image: `${siteUrl}/favicon.ico`,
   favicon: `${siteUrl}/favicon.ico`,
-  copyright: `All rights reserved ${date.getFullYear()}`,
+  copyright: `© Albert Francis P. Florin, All rights reserved ${date.getFullYear()}`,
   updated: date,
   generator: 'Feed for Node.js',
   feedLinks: {
@@ -90,7 +93,8 @@ const feed = new Feed({
 })
 
 const posts = allPosts
-  .filter((post) => !post.draft)
+  .filter((post) => !post.draft && !isVersionedSlug(post.slug))
+  .filter((post) => new Date(post.date) <= new Date())
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
 posts.forEach((post) => {
@@ -100,7 +104,7 @@ posts.forEach((post) => {
     link: `${siteUrl}${post.url}`,
     description: post.excerpt,
     // Note: content not available in Velite without markdown processing
-    author: [{ name: 'Albert' }],
+    author: [{ name: 'Albert Francis P. Florin' }],
     date: new Date(post.date),
   })
 })
@@ -112,7 +116,8 @@ console.log('RSS feeds generated!')
 
 // Generate Content Index
 const indexPosts = allPosts
-  .filter((post) => !post.draft)
+  .filter((post) => !post.draft && !isVersionedSlug(post.slug))
+  .filter((post) => new Date(post.date) <= new Date())
   .map((post) => ({
     slug: post.slug,
     title: post.title,

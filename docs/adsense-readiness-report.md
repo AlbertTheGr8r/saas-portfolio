@@ -1,3 +1,5 @@
+> **Superseded:** this April 2026 report is kept for history. Current tracking lives in GitHub issue #21, the AdSense readiness gate.
+
 # AdSense Readiness Report
 
 **Site**: antiparity.net (Albert Florin - Personal Portfolio)

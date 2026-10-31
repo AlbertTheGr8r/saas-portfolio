@@ -1,6 +1,6 @@
 # Content Directory
 
-This directory contains all static content for the site. Content is processed by Contentlayer at build time.
+This directory contains all static content for the site. Content is processed by Velite at build time.
 
 ## Directory Structure
 

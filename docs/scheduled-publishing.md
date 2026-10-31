@@ -1,50 +1,43 @@
-# Scheduled Publishing
+# Publishing Schedule
 
-**Date**: April 9, 2026
+**Cadence:** the 1st and 15th. Do not announce the cadence publicly until three posts are edited and ready.
 
-Posts can be scheduled for future publication by setting a date in the frontmatter that is later than the current date.
+## How publishing works
 
----
+This is a static site. A post becomes visible only after a build and deploy. There is no server-side scheduler.
 
-## How It Works
+1. Write the post in `content/blog/`.
+2. Set `date` to the publication date (YYYY-MM-DD).
+3. Run `pnpm build` and deploy on the publication day, or push to `main` on that day.
+4. Verify the post, sitemap, and feed after deploy.
 
-1. Set the `date` field in the frontmatter to a future date (YYYY-MM-DD format)
-2. The post will be built into the site but filtered out from:
-   - Blog listing page (`/blog`)
-   - Post navigation (previous/next links)
-   - Search indexes
-3. On the scheduled date, the post automatically becomes visible
+Future-dated posts are filtered out of listings, navigation, sitemap, and feeds at build time. They do not appear automatically on their date unless a new build runs.
 
-## Configuration
+## Optional automation
 
-No additional configuration needed. The filtering is implemented in:
-
-| File | Purpose |
-|------|---------|
-| `src/app/blog/page.tsx` | Filters listing to exclude `date > today` |
-| `src/app/blog/[slug]/page.tsx` | Excludes future posts from navigation |
-
-## Example
+If automatic publishing is wanted later, run the build/deploy workflow on a schedule:
 
 ```yaml
----
-title: "My Future Post"
-date: "2026-06-09"
-excerpt: "This post will go live on June 9, 2026"
-tags: ["example"]
-featured: false
-draft: false
----
-
-# My Future Post
-
-Content here...
+on:
+  schedule:
+    - cron: "0 1 1,15 * *" # 09:00 PHT on the 1st and 15th
 ```
 
-The post will be invisible until June 9, 2026.
+GitHub Actions cron runs in UTC and can be delayed. Manual publishing on the day is more predictable for a personal blog.
 
-## Notes
+## Editing rhythm
 
-- Posts dated in the future are not blocked at the URL level—they simply don't appear in listings or navigation
-- The `date` field serves dual purpose: publication date and scheduling mechanism
-- All dates must be valid ISO format (YYYY-MM-DD)
+| Publish | Outline | Draft | Edit/fact-check | Publish |
+|---|---|---|---|---|
+| 1st | 15th prior | 22nd prior | 27th prior | 1st |
+| 15th | 1st | 8th | 12th | 15th |
+
+## Checklist
+
+- [ ] Frontmatter: title, date, excerpt, tags
+- [ ] Byline and reading time
+- [ ] 2–3 internal links
+- [ ] Sources for technical claims
+- [ ] Image credits
+- [ ] Mobile check
+- [ ] Build, deploy, verify sitemap/feed

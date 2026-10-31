@@ -37,7 +37,7 @@ jobs:
         run: pnpm lint
 
       # The feed/build assertions in src/tests/build.test.ts inspect files
-      # produced by the build (and its postbuild step), so build comes first.
+      # produced by the build, so build comes first.
       - name: Build
         run: pnpm build
 
