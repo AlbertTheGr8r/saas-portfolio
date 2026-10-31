@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { projects } from '.velite'
 import { compareDesc, format, parseISO } from 'date-fns'
-import { Calendar, ExternalLink, Github } from 'lucide-react'
+import { Calendar, ExternalLink } from 'lucide-react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -72,7 +73,7 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
           {project.repoUrl && (
             <Button size="sm" variant="noShadow" className="mt-1" asChild>
               <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" />
+                <SiGithub size={16} className="mr-2" />
                 Code
               </a>
             </Button>

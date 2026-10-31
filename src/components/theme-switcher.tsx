@@ -9,11 +9,11 @@ import { Button } from '@/components/ui/button'
 
 export function ThemeSwitcher() {
   const { setTheme, theme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
+  const mounted = React.useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  )
 
   const cycleTheme = () => {
     if (theme === 'light') {

@@ -4,7 +4,8 @@ import { format, parseISO } from 'date-fns'
 import { projects } from '.velite'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink } from 'lucide-react'
+import { SiGithub } from '@icons-pack/react-simple-icons'
 import { MDXContent } from '@/components/mdx-content'
 import Link from 'next/link'
 
@@ -116,7 +117,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             {project.repoUrl && (
               <Button variant="neutral" asChild>
                 <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
+                  <SiGithub size={16} className="mr-2" />
                   View Code
                 </a>
               </Button>
@@ -190,7 +191,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   {project.repoUrl && (
                     <Button size="sm" variant="noShadow" asChild>
                       <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" />
+                        <SiGithub size={16} className="mr-2" />
                         Code
                       </a>
                     </Button>

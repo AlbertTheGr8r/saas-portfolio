@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { cn } from '@/lib/utils'
@@ -18,25 +18,15 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname()
-  const [isVisible, setIsVisible] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [pathname])
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false)
-  }, [pathname])
 
   return (
     <>
       <nav
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 py-2 transition-transform duration-300 ease-in-out hidden md:block',
+          'fixed top-0 left-0 right-0 z-50 hidden py-2 md:block',
           'bg-main border-b-4 border-border',
-          'dark:bg-main dark:border-darkBorder dark:shadow-darkShadow',
-          isVisible ? 'translate-y-0' : '-translate-y-full'
+          'dark:bg-main dark:border-darkBorder dark:shadow-darkShadow'
         )}
       >
         <div className="mx-auto w-container max-w-full px-5">
@@ -85,10 +75,7 @@ export function Navbar() {
       <Button
         size="icon"
         variant="default"
-        className={cn(
-          'fixed right-5 z-50 top-[env(safe-area-inset-top)] mt-4 transition-transform duration-300 ease-in-out md:hidden',
-          isVisible ? 'translate-y-0' : '-translate-y-full'
-        )}
+        className="fixed right-5 top-[env(safe-area-inset-top)] z-50 mt-4 md:hidden"
         onClick={() => setIsMobileMenuOpen(true)}
         aria-label="Open menu"
       >
@@ -141,7 +128,10 @@ export function Navbar() {
                       isActive && 'translate-x-boxShadowX translate-y-boxShadowY shadow-none'
                     )}
                   >
-                    <Link href={link.href}>
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
                       {link.label}
                     </Link>
                   </Button>
