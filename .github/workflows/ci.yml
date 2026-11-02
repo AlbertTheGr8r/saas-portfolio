@@ -47,14 +47,12 @@ jobs:
   auto-merge:
     name: Auto-merge minor and patch updates
     needs: build-and-test
-    # Dependabot applies the `minor`/`patch` SemVer labels to single-dependency
-    # PRs (the labels exist in the repo). Grouped PRs carry no SemVer label, so
-    # fall back to the group identifier in the branch name.
-    if: >
-      github.event.pull_request.user.login == 'dependabot[bot]' &&
-      (contains(github.event.pull_request.labels.*.name, 'minor') ||
-       contains(github.event.pull_request.labels.*.name, 'patch') ||
-       contains(github.head_ref, 'minor-patch'))
+    # Only the author is checked here: Dependabot applies the `minor`/`patch`
+    # SemVer labels a few seconds *after* opening the PR, so the label list in
+    # the `pull_request` event payload is often empty (see #29, which was left
+    # unmerged). The labels are read from the API in the merge step instead.
+    # Grouped PRs may carry no SemVer label at all, hence the branch fallback.
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -66,8 +64,17 @@ jobs:
         # of leaving a red run. The rebase triggers CI again, then this job
         # retries the merge.
         run: |
+          labels=$(gh pr view "$PR_URL" --json labels --jq '[.labels[].name] | join(" ")')
+
+          if ! grep -Eq '(^| )(minor|patch)( |$)' <<< "$labels" &&
+             [[ "$HEAD_REF" != *minor-patch* ]]; then
+            echo "Not a minor/patch update (labels: ${labels:-none}); leaving open."
+            exit 0
+          fi
+
           gh pr merge --squash --delete-branch "$PR_URL" ||
             gh pr comment "$PR_URL" --body "@dependabot rebase"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
+          HEAD_REF: ${{ github.head_ref }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
