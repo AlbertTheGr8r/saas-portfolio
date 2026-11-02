@@ -63,8 +63,15 @@
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
+    "vite": "^7.3.7",
     "vitest": "^5.0.5",
     "vitest-axe": "^0.1.0",
     "zod": "^4.6.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "sharp": "0.35.5",
+      "vite>esbuild": "0.28.2"
+    }
   }
 }
