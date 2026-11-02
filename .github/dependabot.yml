@@ -16,6 +16,13 @@ updates:
       prefix: "deps"
       prefix-development: "deps-dev"
       include: "scope"
+    ignore:
+      # typescript-eslint (latest 8.72.1) throws `does not support TS 7.0`
+      # during lint, and its peer range is `>=4.8.4 <6.1.0`. TS majors are
+      # therefore upgraded by hand; ignore only applies to version updates,
+      # so security updates still come through.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       # Routine minor + patch bumps, auto-merged after CI passes.
       minor-patch:
