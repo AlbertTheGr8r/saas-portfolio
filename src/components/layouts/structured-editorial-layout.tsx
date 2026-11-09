@@ -86,7 +86,7 @@ export function StructuredEditorialLayout({
   const activeId = useActiveHeading(tocItems.map((item) => item.id))
 
   return (
-    <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+    <article className="min-h-screen bg-background pt-14">
       <div className="mx-auto max-w-7xl px-5 py-12 md:py-20">
         {/* HERO - Left aligned with tension */}
         <header className="mb-16 max-w-4xl">

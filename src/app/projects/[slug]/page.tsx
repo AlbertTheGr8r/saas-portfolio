@@ -80,7 +80,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(projectLd) }}
       />
-      <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+      <article className="min-h-screen bg-background pt-14">
       <div className="mx-auto max-w-6xl px-5 py-12 md:py-20">
 
         {/* HERO */}
@@ -137,7 +137,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
           {/* SIDEBAR - Spec Card */}
           <aside className="lg:col-span-4 lg:sticky lg:top-24 h-fit">
-            <div className="rounded-2xl border-2 border-border bg-background p-6 space-y-8 dark:border-darkBorder">
+            <div className="rounded-2xl border-2 border-border bg-secondary-background p-6 space-y-8 dark:border-darkBorder">
               
               {/* Study Info */}
               <div>
@@ -214,7 +214,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <Link 
                   key={relatedProject.slug}
                   href={relatedProject.url}
-                  className="group block p-6 rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow"
+                  className="group block p-6 rounded-base border-2 border-border bg-secondary-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-sm text-muted-foreground">

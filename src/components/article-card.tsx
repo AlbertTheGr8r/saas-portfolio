@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { format, parseISO } from 'date-fns'
 import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 
 interface ArticleCardProps {
   title: string
@@ -12,6 +13,7 @@ interface ArticleCardProps {
   coverImage?: string
   coverImageAlt?: string
   coverImageCredit?: string
+  className?: string
 }
 
 export function ArticleCard({
@@ -24,9 +26,15 @@ export function ArticleCard({
   coverImage,
   coverImageAlt,
   coverImageCredit,
+  className,
 }: ArticleCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-base border-2 border-border bg-secondary-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow">
+    <article
+      className={cn(
+        'group flex h-full flex-col overflow-hidden rounded-base border-2 border-border bg-secondary-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow',
+        className
+      )}
+    >
       {coverImage && (
         <div className="aspect-video w-full overflow-hidden border-b-2 border-border dark:border-darkBorder">
           <img

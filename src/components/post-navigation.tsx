@@ -21,7 +21,7 @@ export function PostNavigation({ previousPost, nextPost }: PostNavigationProps) 
       {previousPost ? (
         <Link
           href={previousPost.url}
-          className="group flex flex-col p-4 rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow"
+          className="group flex flex-col p-4 rounded-base border-2 border-border bg-secondary-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow"
         >
           <span className="text-xs text-muted-foreground mb-2 flex items-center gap-1">
             <ChevronLeft className="h-3 w-3" />
@@ -42,7 +42,7 @@ export function PostNavigation({ previousPost, nextPost }: PostNavigationProps) 
       {nextPost ? (
         <Link
           href={nextPost.url}
-          className="group flex flex-col items-end text-right p-4 rounded-base border-2 border-border bg-bg shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:bg-darkBg dark:shadow-darkShadow"
+          className="group flex flex-col items-end text-right p-4 rounded-base border-2 border-border bg-secondary-background shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow"
         >
           <span className="text-xs text-muted-foreground mb-2 flex items-center gap-1">
             Next

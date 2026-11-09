@@ -32,7 +32,7 @@ export function EditorialLayout({
   footer,
 }: EditorialLayoutProps) {
   return (
-    <article className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+    <article className="min-h-screen bg-background pt-14">
       <div className="mx-auto max-w-4xl px-5 py-12 md:py-20">
         {/* HERO - Left aligned with brutalist scale */}
         <header className="mb-16">

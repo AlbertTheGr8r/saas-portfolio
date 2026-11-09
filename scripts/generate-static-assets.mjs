@@ -14,6 +14,22 @@ const allProjects = JSON.parse(readFileSync(join(veliteDir, 'projects.json'), 'u
 const siteUrl = 'https://antiparity.net'
 const date = new Date()
 
+// The home page's Start here row fits at most three featured posts.
+const publishedFeatured = allPosts.filter(
+  (post) =>
+    !post.draft &&
+    !post.archived &&
+    new Date(post.date) <= date &&
+    post.featured
+)
+
+if (publishedFeatured.length > 3) {
+  throw new Error(
+    `Front page supports at most 3 featured posts; found ${publishedFeatured.length}: ` +
+      publishedFeatured.map((post) => post.slug).join(', ')
+  )
+}
+
 // Static pages to include in sitemap
 const staticPages = [
   { path: '', priority: '1.0', changefreq: 'weekly' },

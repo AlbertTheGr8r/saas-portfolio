@@ -66,7 +66,7 @@ export function MDXContent({ source, className }: MDXContentProps) {
           blockquote: ({ className, children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
             <blockquote
               className={cn(
-                'mt-8 mb-8 rounded-base border-2 border-border dark:border-darkBorder bg-background p-6 shadow-shadow dark:shadow-darkShadow',
+                'mt-8 mb-8 rounded-base border-2 border-border dark:border-darkBorder bg-secondary-background p-6 shadow-shadow dark:shadow-darkShadow',
                 className
               )}
               {...props}
@@ -84,14 +84,14 @@ export function MDXContent({ source, className }: MDXContentProps) {
           code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
             <code
               className={cn(
-                'relative rounded bg-background px-[0.3rem] py-[0.2rem] font-mono text-sm',
+                'relative rounded bg-secondary-background px-[0.3rem] py-[0.2rem] font-mono text-sm',
                 className
               )}
               {...props}
             />
           ),
           pre: ({ className, children, ...props }: React.HTMLAttributes<HTMLPreElement>) => (
-            <div className="mb-6 rounded-base border-2 border-border dark:border-darkBorder bg-background shadow-shadow dark:shadow-darkShadow overflow-hidden">
+            <div className="mb-6 rounded-base border-2 border-border dark:border-darkBorder bg-secondary-background shadow-shadow dark:shadow-darkShadow overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-2 border-b-2 border-border dark:border-darkBorder bg-main">
                 <X className="w-4 h-4 text-black stroke-[2.5] mx-1.5" />
                 <Diamond className="w-3 h-3 text-black stroke-[4] mx-1.5" />
@@ -100,7 +100,7 @@ export function MDXContent({ source, className }: MDXContentProps) {
               </div>
               <pre
                 className={cn(
-                  'overflow-x-auto p-4 text-sm bg-background',
+                  'overflow-x-auto p-4 text-sm bg-secondary-background',
                   className
                 )}
                 {...props}

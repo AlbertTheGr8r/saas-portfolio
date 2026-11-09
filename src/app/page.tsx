@@ -35,11 +35,8 @@ export default function Home() {
     )
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
-  const startHere = published.filter((post) => post.featured).slice(0, 2)
-  const startHereSlugs = new Set(startHere.map((post) => post.slug))
-  const latest = published
-    .filter((post) => !startHereSlugs.has(post.slug))
-    .slice(0, 4)
+  const startHere = published.filter((post) => post.featured).slice(0, 3)
+  const latest = published.slice(0, 4)
 
   const selectedProjects = projects
     .filter((project) => !project.draft && !project.archived)
@@ -114,9 +111,13 @@ export default function Home() {
             <p className="mt-2 max-w-2xl text-muted-foreground">
               The pieces that best explain what this site is about.
             </p>
-            <div className="mt-8 grid gap-5 md:grid-cols-2">
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
               {startHere.map((post) => (
-                <ArticleCard key={post.slug} {...postCardProps(post)} />
+                <ArticleCard
+                  key={post.slug}
+                  {...postCardProps(post)}
+                  className="bg-background"
+                />
               ))}
             </div>
           </div>

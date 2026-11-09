@@ -97,7 +97,7 @@ export default function BlogPage() {
   const remainingPosts = displayFeatured.length > 0 ? regularPosts : allPosts
 
   return (
-    <div className="min-h-screen bg-bg dark:bg-darkBg pt-14">
+    <div className="min-h-screen bg-background pt-14">
       <div className="mx-auto max-w-6xl md:w-container max-w-full px-5 py-12 md:py-20">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-heading">Blog</h1>
