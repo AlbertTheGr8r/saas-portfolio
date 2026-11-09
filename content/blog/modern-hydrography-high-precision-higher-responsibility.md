@@ -6,6 +6,7 @@ excerpt: "Hydrography is no longer limited by access to equipment, but by how we
 tags: ["engineering", "data", "responsibility", "methodology"]
 featured: true
 draft: false
+archived: true
 coverImage: "/static/hydrography.jpg"
 ---
 

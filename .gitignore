@@ -66,3 +66,6 @@ next-env.d.ts
 
 # full-resolution source images (not deployed)
 /originals/
+
+# local project-scoped editor skill (manual, not global)
+/.opencode/skills/editor/

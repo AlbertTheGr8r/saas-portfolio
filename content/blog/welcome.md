@@ -6,6 +6,7 @@ excerpt: "An introduction to a neo-brutalist blog for thoughts, systems, and wor
 tags: ["methodology"]
 featured: true
 draft: false
+archived: true
 coverImage: "/static/think.jpg"
 ---
 

@@ -9,6 +9,7 @@ techStack: ["Next.js", "Velite", "Tailwind CSS", "TypeScript"]
 demoUrl: "https://antiparity.net"
 repoUrl: "https://github.com/AlbertTheGr8r/saas-portfolio"
 draft: false
+archived: true
 ---
 
 # This site itself

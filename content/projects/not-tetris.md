@@ -7,6 +7,7 @@ tags: ["game-development", "react", "typescript", "zustand", "ai"]
 techStack: ["React 19", "TypeScript", "Zustand", "Tailwind CSS v4", "Vite"]
 demoUrl: "https://outcrop.antiparity.net/"
 draft: false
+archived: true
 ---
 
 Not every game needs to reinvent the wheel. Sometimes, the most interesting ideas emerge from asking a simple question: what if we combine this with another thing? That question led us down a grind of perspective-dependent rendering and an AI system that had to learn an entirely new way to think about territory.

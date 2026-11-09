@@ -5,6 +5,7 @@ excerpt: "We often define progress through data points and completed projects, y
 tags: ["infrastructure", "community", "systems-thinking"]
 featured: false
 draft: false
+archived: true
 coverImage: "/static/cities.jpg"
 ---
 

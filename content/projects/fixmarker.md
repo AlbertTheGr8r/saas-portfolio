@@ -7,6 +7,7 @@ tags: ["geodesy", "control-points", "mapping", "django", "leaflet", "community"]
 techStack: ["Django", "Leaflet", "Python 3.11+", "Spatialite", "Mapbox"]
 demoUrl: "https://control.affdc.net/"
 draft: false
+archived: true
 ---
 
 *This is a companion article to [Science Communications: Control Point Recovery and the Shift in Perspective](/blog/science-communications-control-point-recovery/) where I explored the philosophy behind this project. Here, I'll walk through the technical journey of building it.*

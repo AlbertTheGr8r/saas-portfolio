@@ -5,6 +5,7 @@ excerpt: "An invited talk on science communications and control point recovery p
 tags: ["engineering", "data", "community", "methodology"]
 featured: true
 draft: false
+archived: true
 coverImage: "/static/science-comms.jpg"
 coverImageAlt: "Albert Florin speaking at the Geodetic Engineers of the Philippines Region V event"
 coverImageCredit: "Photo: Luke Austin R. Vargas"

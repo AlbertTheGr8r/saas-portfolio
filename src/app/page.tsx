@@ -83,24 +83,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-b-2 border-border bg-background py-16 md:py-20">
-        <div className="mx-auto w-container max-w-full px-5">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="text-3xl font-heading md:text-4xl">Latest writing</h2>
+      {latest.length > 0 && (
+        <section className="border-b-2 border-border bg-background py-16 md:py-20">
+          <div className="mx-auto w-container max-w-full px-5">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-heading md:text-4xl">Latest writing</h2>
+              </div>
+              <Link href="/blog" className="font-heading underline underline-offset-4">
+                More →
+              </Link>
             </div>
-            <Link href="/blog" className="font-heading underline underline-offset-4">
-              More →
-            </Link>
-          </div>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {latest.map((post) => (
-              <ArticleCard key={post.slug} {...postCardProps(post)} />
-            ))}
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
+              {latest.map((post) => (
+                <ArticleCard key={post.slug} {...postCardProps(post)} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {startHere.length > 0 && (
         <section className="border-b-2 border-border bg-secondary-background py-16 md:py-20">
@@ -118,49 +120,51 @@ export default function Home() {
         </section>
       )}
 
-      <section className="border-b-2 border-border bg-background py-16 md:py-20">
-        <div className="mx-auto w-container max-w-full px-5">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <h2 className="text-3xl font-heading md:text-4xl">Studies</h2>
-              <p className="mt-2 text-muted-foreground">
-                Case studies on things built and shipped.
-              </p>
-            </div>
-            <Link href="/projects" className="font-heading underline underline-offset-4">
-              More →
-            </Link>
-          </div>
-
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {selectedProjects.map((project) => (
-              <Link
-                key={project.slug}
-                href={project.url}
-                className="group flex h-full flex-col rounded-base border-2 border-border bg-secondary-background p-6 shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow"
-              >
-                <Badge
-                  variant={project.status === 'completed' ? 'default' : 'neutral'}
-                  className="w-fit"
-                >
-                  {project.status}
-                </Badge>
-                <h3 className="mt-4 text-xl font-heading leading-snug">
-                  {project.title}
-                </h3>
-                {project.excerpt && (
-                  <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">
-                    {project.excerpt}
-                  </p>
-                )}
-                <span className="mt-auto pt-6 font-heading text-sm underline underline-offset-4">
-                  View study →
-                </span>
+      {selectedProjects.length > 0 && (
+        <section className="border-b-2 border-border bg-background py-16 md:py-20">
+          <div className="mx-auto w-container max-w-full px-5">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <h2 className="text-3xl font-heading md:text-4xl">Studies</h2>
+                <p className="mt-2 text-muted-foreground">
+                  Case studies on things built and shipped.
+                </p>
+              </div>
+              <Link href="/projects" className="font-heading underline underline-offset-4">
+                More →
               </Link>
-            ))}
+            </div>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {selectedProjects.map((project) => (
+                <Link
+                  key={project.slug}
+                  href={project.url}
+                  className="group flex h-full flex-col rounded-base border-2 border-border bg-secondary-background p-6 shadow-shadow transition-all hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:border-darkBorder dark:shadow-darkShadow"
+                >
+                  <Badge
+                    variant={project.status === 'completed' ? 'default' : 'neutral'}
+                    className="w-fit"
+                  >
+                    {project.status}
+                  </Badge>
+                  <h3 className="mt-4 text-xl font-heading leading-snug">
+                    {project.title}
+                  </h3>
+                  {project.excerpt && (
+                    <p className="mt-3 line-clamp-3 text-sm text-muted-foreground">
+                      {project.excerpt}
+                    </p>
+                  )}
+                  <span className="mt-auto pt-6 font-heading text-sm underline underline-offset-4">
+                    View study →
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section className="bg-secondary-background py-16 md:py-20">
         <div className="mx-auto w-container max-w-full px-5">

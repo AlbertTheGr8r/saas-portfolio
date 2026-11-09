@@ -92,7 +92,7 @@ const feed = new Feed({
 })
 
 const posts = allPosts
-  .filter((post) => !post.draft)
+  .filter((post) => !post.draft && !post.archived)
   .filter((post) => new Date(post.date) <= new Date())
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
@@ -115,7 +115,7 @@ console.log('RSS feeds generated!')
 
 // Generate Content Index
 const indexPosts = allPosts
-  .filter((post) => !post.draft)
+  .filter((post) => !post.draft && !post.archived)
   .filter((post) => new Date(post.date) <= new Date())
   .map((post) => ({
     slug: post.slug,
@@ -128,7 +128,7 @@ const indexPosts = allPosts
   }))
 
 const indexProjects = allProjects
-  .filter((project) => !project.draft)
+  .filter((project) => !project.draft && !project.archived)
   .map((project) => ({
     slug: project.slug,
     title: project.title,

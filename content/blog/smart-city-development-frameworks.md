@@ -6,6 +6,7 @@ excerpt: "A comprehensive analysis of smart city development frameworks publishe
 tags: ["infrastructure", "governance", "systems-thinking", "community"]
 featured: false
 draft: false
+archived: true
 coverImage: "/static/quezon-city-night.webp"
 coverImageAlt: "Quezon City at night, showing residential and commercial buildings along a highway"
 coverImageCredit: "Photo: Albert Florin"

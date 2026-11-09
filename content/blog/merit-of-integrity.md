@@ -5,6 +5,7 @@ excerpt: "Civil engineering does not simply deal with construction. Integral to 
 tags: ["engineering", "responsibility", "systems-thinking", "governance"]
 featured: false
 draft: false
+archived: true
 ---
 
 *This is a digital copy of an essay originally submitted in partial fulfilment of the course CE 1 – Introduction to Civil Engineering at the University of the Philippines, Diliman.*

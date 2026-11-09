@@ -3,6 +3,13 @@ name: Deploy Next.js site to GitHub Pages
 on:
   push:
     branches: ["main"]
+  schedule:
+    # 09:00 PHT on the 15th and 30th. GitHub cron runs in UTC.
+    - cron: "0 1 15,30 * *"
+    # February has no 30th; rebuild on the 28th and 29th.
+    - cron: "0 1 28 2 *"
+    - cron: "0 1 29 2 *"
+  workflow_dispatch:
 
 permissions:
   contents: read

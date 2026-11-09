@@ -13,20 +13,20 @@ This is a static site. A post becomes visible only after a build and deploy. The
 
 Future-dated posts are filtered out of listings, navigation, sitemap, and feeds at build time. They do not appear automatically on their date unless a new build runs.
 
-## Optional automation
+## Automation
 
-If automatic publishing is wanted later, run the build/deploy workflow on a schedule:
+The deploy workflow now rebuilds on the 15th and 30th (and 28/29 February):
 
 ```yaml
 on:
   schedule:
-    - cron: "0 1 15 * *" # 09:00 PHT on the 15th
-    - cron: "0 1 30 * *" # 09:00 PHT on the 30th
-    - cron: "0 1 28 2 *" # 09:00 PHT on 28 February
-    - cron: "0 1 29 2 *" # 09:00 PHT on 29 February (leap years)
+    - cron: "0 1 15,30 * *" # 09:00 PHT on the 15th and 30th
+    - cron: "0 1 28 2 *"    # 09:00 PHT on 28 February
+    - cron: "0 1 29 2 *"    # 09:00 PHT on 29 February (leap years)
+  workflow_dispatch:
 ```
 
-Cron cannot express "the last day of the month", so February needs its own line. GitHub Actions cron runs in UTC and can be delayed. Manual publishing on the day is more predictable for a personal blog.
+Cron cannot express "the last day of the month", so February needs its own lines. GitHub Actions cron runs in UTC and can be delayed. If a post must go live at a specific time, run the workflow manually from the Actions tab (`workflow_dispatch`) or push a commit on the day.
 
 ## Editing rhythm
 

@@ -65,7 +65,7 @@ Set `draft: true` in frontmatter to exclude from production builds. Drafts are s
 
 ## Archives
 
-Set `archived: true` to hide posts from the main feed/listings but keep them accessible via direct URL and search. Unlike drafts, archived posts are included in production builds and searchable.
+Set `archived: true` to hide posts from the main feed and listings but keep them accessible via direct URL and in the sitemap. Unlike drafts, archived posts are included in production builds.
 
 Use cases:
 - Old posts you don't want to feature but keep accessible
