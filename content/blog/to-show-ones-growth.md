@@ -5,6 +5,9 @@ excerpt: "A relaunch note on why the old articles read like answers instead of e
 tags: ["meta", "writing", "growth"]
 featured: true
 draft: false
+coverImage: "/static/to-show-ones-growth-cover.webp"
+coverImageAlt: "Handwritten notes on branching strategy, CI/CD, milestones, and versioning, with the institutional header scribbled out"
+coverImageCredit: "Photo: Albert Florin"
 ---
 
 I remembered this site exists after sleeping on it for months. I read one article and wondered if I actually wrote this — and had the sense to publish it online for the world to see. It looked good. It had content. But really? The me from high school could write better essays. I wouldn’t be surprised if the me from elementary could outdo this.
