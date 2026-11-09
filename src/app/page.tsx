@@ -36,7 +36,10 @@ export default function Home() {
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
 
   const startHere = published.filter((post) => post.featured).slice(0, 3)
-  const latest = published.slice(0, 4)
+  const startHereSlugs = new Set(startHere.map((post) => post.slug))
+  const latest = published
+    .filter((post) => !startHereSlugs.has(post.slug))
+    .slice(0, 4)
 
   const selectedProjects = projects
     .filter((project) => !project.draft && !project.archived)
@@ -83,7 +86,7 @@ export default function Home() {
         </div>
       </section>
 
-      {latest.length > 0 && (
+      {published.length > 0 && (
         <section className="border-b-2 border-border bg-background py-16 md:py-20">
           <div className="mx-auto w-container max-w-full px-5">
             <div className="flex flex-wrap items-end justify-between gap-4">
