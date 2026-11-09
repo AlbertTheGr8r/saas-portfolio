@@ -19,6 +19,9 @@ function postCardProps(post: (typeof posts)[0]) {
     date: post.date,
     tags: post.tags,
     readingTime: getReadingTime(post.content),
+    coverImage: post.coverImage,
+    coverImageAlt: post.coverImageAlt,
+    coverImageCredit: post.coverImageCredit,
   }
 }
 
