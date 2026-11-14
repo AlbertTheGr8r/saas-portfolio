@@ -5,6 +5,9 @@ excerpt: "On using AI as a harness for creative momentum: catching the explosion
 tags: ["ai", "writing", "methodology"]
 featured: false
 draft: false
+coverImage: "/static/you-said-cover.webp"
+coverImageAlt: "A clear ballpoint pen with its ink nearly gone, resting on handwritten notes about building occupancy classification"
+coverImageCredit: "Photo: Albert Florin"
 ---
 
 You said don't trade your passion to create for efficiency. That was the quote, and you've been turning it over since you heard it. It sounds like wisdom. It sounds like the sort of thing a seasoned writer pins above a desk as a warning. Don't let the machine steal the joy. Don't trade the messy, electric thrill of making something from nothing for the comfort of a finished product you didn't earn.
